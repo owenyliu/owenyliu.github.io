@@ -96,9 +96,9 @@ footer { text-align: center; font-family: var(--mono); font-size: .75rem; color:
     <button type="button" id="copy-email">[Email]</button>
     <a href="Owen_Liu_CV.pdf" target="_blank" rel="noopener">[CV]</a>
     <a href="#research">[Research]</a>
-    <a href="https://github.com/OwenLiudev" target="_blank" rel="noopener">[GitHub]</a>
+    <a href="https://github.com/owenyliu" target="_blank" rel="noopener">[GitHub]</a>
   </div>
-  <p class="email-line" id="email-line">owen2034@stanford.edu</p>
+  <p class="email-line" id="email-line" aria-live="polite"></p>
 
   <section class="bio" aria-label="About">
     <p>Hi! I'm Owen Yajie Liu, a Master's student at Stanford studying Computer Science with Clinical Informatics Management.</p>
@@ -146,17 +146,21 @@ footer { text-align: center; font-family: var(--mono); font-size: .75rem; color:
     </dl>
   </section>
 
-  <footer>owenliudev.github.io · owen2034@stanford.edu</footer>
+  <footer>owenyliu.github.io</footer>
 </div>
 <script>
 (function () {
+  // The address is never written in the page: it is assembled only when a person clicks.
   var btn = document.getElementById('copy-email');
   var line = document.getElementById('email-line');
-  var email = 'owen2034@stanford.edu';
+  function addr() { return ['owen', '2034'].join('') + String.fromCharCode(64) + ['stanford', 'edu'].join('.'); }
   btn.addEventListener('click', function () {
-    function done(msg) { line.textContent = msg; setTimeout(function () { line.textContent = email; }, 1800); }
-    function selectLine() { var r = document.createRange(); r.selectNodeContents(line); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); }
-    try { navigator.clipboard.writeText(email).then(function () { done('Copied ' + email); }, selectLine); } catch (e) { selectLine(); }
+    var email = addr();
+    line.innerHTML = '';
+    var a = document.createElement('a');
+    a.href = 'mail' + 'to:' + email; a.textContent = email;
+    line.appendChild(a);
+    try { navigator.clipboard.writeText(email).then(function () { a.insertAdjacentText('afterend', ' (copied)'); }, function () {}); } catch (e) {}
   });
 })();
 </script>
