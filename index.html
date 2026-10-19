@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Owen Yajie Liu</title>
+<meta name="description" content="Owen Yajie Liu: Stanford M.S. student working on AI agents, agent evaluation, and tabular representation learning.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='13' fill='%233d6b52'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Parisienne&family=Crimson+Pro:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root {
+  --paper: #f7f8f5; --ink: #1f2420; --muted: #5d6660; --accent: #3d6b52; --accent-soft: #d9e6dc; --line: #dfe4dd;
+  --display: "Parisienne", "Snell Roundhand", cursive;
+  --body: "Crimson Pro", "Iowan Old Style", Georgia, serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --paper: #161a17; --ink: #e6ebe5; --muted: #a2ada5; --accent: #8cc3a2; --accent-soft: #24332a; --line: #2b322d; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --paper: #161a17; --ink: #e6ebe5; --muted: #a2ada5; --accent: #8cc3a2; --accent-soft: #24332a; --line: #2b322d; color-scheme: dark; }
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 1.15rem; line-height: 1.6; margin: 0; padding-inline: 20px; padding-block: 48px 64px; }
+.page { max-width: 38rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.4rem; }
+header { display: flex; flex-direction: column; align-items: center; gap: .4rem; text-align: center; }
+.name { font-family: var(--display); font-weight: 400; font-size: clamp(3rem, 11vw, 4.2rem); line-height: 1.1; color: var(--accent); margin: 0; }
+.name .dot { color: var(--ink); }
+nav { font-size: 1.05rem; color: var(--muted); }
+nav a { color: var(--ink); }
+nav .amp { color: var(--accent); opacity: .7; margin: 0 .35em; font-family: var(--mono); font-size: .85em; }
+.art { display: flex; justify-content: center; }
+.art svg { width: min(300px, 80%); height: auto; }
+.links { display: flex; flex-wrap: wrap; justify-content: center; gap: .4rem 1.1rem; font-family: var(--mono); font-size: .9rem; }
+.links a, .links button { font: inherit; color: var(--accent); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: none; }
+.links a:hover, .links button:hover { text-decoration: underline; }
+.email-line { text-align: center; font-family: var(--mono); font-size: .85rem; color: var(--muted); margin-top: -1.6rem; min-height: 1.3em; }
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+.bio p { margin: 0 0 1rem; }
+.bio p:last-child { margin-bottom: 0; }
+h2 { font-family: var(--body); font-weight: 500; font-size: 1.35rem; margin: 0 0 .9rem; text-wrap: balance; display: flex; align-items: baseline; gap: .6rem; }
+h2::after { content: ""; flex: 1; border-bottom: 1px solid var(--line); transform: translateY(-.3em); }
+.projects { display: flex; flex-direction: column; gap: 1.3rem; }
+.project h3 { font-size: 1.1rem; font-weight: 500; margin: 0; text-wrap: balance; }
+.project .meta { font-family: var(--mono); font-size: .78rem; color: var(--muted); letter-spacing: .02em; }
+.project p { margin: .25rem 0 0; }
+.tag { display: inline-block; font-family: var(--mono); font-size: .72rem; color: var(--accent); background: var(--accent-soft); border-radius: 3px; padding: .05rem .4rem; margin-left: .3rem; vertical-align: .15em; white-space: nowrap; }
+.contrib { list-style: none; margin: .4rem 0 0; padding: 0; display: flex; flex-direction: column; gap: .3rem; }
+.note { font-size: .95rem; color: var(--muted); font-style: italic; margin: .2rem 0 0; }
+.updates { display: grid; grid-template-columns: 8.5rem 1fr; gap: .55rem 1rem; margin: 0; }
+.updates dt { font-family: var(--mono); font-size: .8rem; color: var(--muted); padding-top: .25rem; font-variant-numeric: tabular-nums; }
+.updates dd { margin: 0; min-width: 0; }
+@media (max-width: 520px) { .updates { grid-template-columns: 1fr; gap: 0; } .updates dd { margin-bottom: .7rem; } }
+footer { text-align: center; font-family: var(--mono); font-size: .75rem; color: var(--muted); }
+@media (prefers-reduced-motion: no-preference) {
+  .ball { animation: bounce 2.4s ease-in-out infinite; transform-origin: center; }
+  @keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <h1 class="name">Owen Liu<span class="dot">.</span></h1>
+    <nav aria-label="Sections">
+      <a href="Owen_Liu_CV.pdf" target="_blank" rel="noopener">CV</a><span class="amp">&amp;&amp;</span><a href="#research">research</a><span class="amp">&amp;&amp;</span><a href="#updates">updates</a>
+    </nav>
+  </header>
+
+  <div class="art" aria-hidden="true">
+    <svg viewBox="0 0 320 230" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20 170 L300 170 L280 196 L40 196 Z" fill="var(--accent)" opacity=".9"/>
+      <line x1="160" y1="170" x2="160" y2="196" stroke="var(--paper)" stroke-width="2"/>
+      <rect x="40" y="196" width="6" height="26" fill="var(--muted)"/>
+      <rect x="274" y="196" width="6" height="26" fill="var(--muted)"/>
+      <rect x="150" y="150" width="20" height="20" fill="none" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="3 2"/>
+      <rect x="62" y="58" width="150" height="104" rx="8" fill="var(--paper)" stroke="var(--ink)" stroke-width="2"/>
+      <line x1="62" y1="78" x2="212" y2="78" stroke="var(--ink)" stroke-width="2"/>
+      <circle cx="76" cy="68" r="3.5" fill="var(--accent)"/>
+      <circle cx="88" cy="68" r="3.5" fill="var(--muted)"/>
+      <circle cx="100" cy="68" r="3.5" fill="var(--line)" stroke="var(--muted)"/>
+      <text x="74" y="100" font-family="IBM Plex Mono, monospace" font-size="10" fill="var(--accent)">$ run agent</text>
+      <text x="74" y="116" font-family="IBM Plex Mono, monospace" font-size="10" fill="var(--muted)">step 12: treat ✓</text>
+      <text x="74" y="132" font-family="IBM Plex Mono, monospace" font-size="10" fill="var(--muted)">step 13: trick?</text>
+      <rect x="74" y="140" width="7" height="11" fill="var(--ink)"/>
+      <g transform="rotate(-25 250 110)">
+        <rect x="244" y="128" width="12" height="40" rx="4" fill="var(--muted)"/>
+        <circle cx="250" cy="104" r="30" fill="var(--accent)" stroke="var(--ink)" stroke-width="2"/>
+      </g>
+      <circle class="ball" cx="232" cy="44" r="8" fill="var(--paper)" stroke="var(--ink)" stroke-width="2"/>
+    </svg>
+  </div>
+
+  <div class="links">
+    <button type="button" id="copy-email">[Email]</button>
+    <a href="Owen_Liu_CV.pdf" target="_blank" rel="noopener">[CV]</a>
+    <a href="#research">[Research]</a>
+  </div>
+  <p class="email-line" id="email-line">owen2034@stanford.edu</p>
+
+  <section class="bio" aria-label="About">
+    <p>Hi! I'm Owen Yajie Liu, a Master's student at Stanford studying Computer Science with Clinical Informatics Management.</p>
+    <p>I'm interested in AI agents: how we evaluate them, and the data we train them on. Right now I'm working on whether a fast model can tell which of an agent's decisions will fail without running them, and on how numbers should be encoded when models learn from clinical tables.</p>
+    <p>Before Stanford I co-founded TATA Technology in Hong Kong, a marketplace that helped 20,000+ families of autistic children find trained providers. It was acquired after four years.</p>
+    <p>Outside of work I play pickleball. I used to play table tennis professionally, and later coached kids. Reach out if you want to chat!</p>
+  </section>
+
+  <section id="research" aria-labelledby="research-h">
+    <h2 id="research-h">Research</h2>
+    <div class="projects">
+      <article class="project">
+        <h3>Evaluating numerical preprocessing methods for tabular representation learning <span class="tag">working paper</span></h3>
+        <div class="meta">Owen Yajie Liu, Kara Liu, Michael S. Bernstein · 2026</div>
+        <p>A neural network only sees vectors, so a value like heart rate has to be encoded first, and that choice decides which differences look big. We test how different encodings change what a variational autoencoder learns about each ICU patient, and which encoding suits which kind of variable.</p>
+      </article>
+      <article class="project">
+        <h3>Trick or Treat: Can a fast AI tell which agent decisions are tricks? <span class="tag">working paper</span></h3>
+        <div class="meta">Owen Yajie Liu · 2026</div>
+        <p>I take decision points from real SWE-agent runs, label each one by replaying it in its environment, and measure how much of the set fast "System 1" models can label at 95% precision, and how much replay that saves.</p>
+      </article>
+      <article class="project">
+        <h3>Open projects I've contributed to</h3>
+        <div class="meta">Stanford · 2025</div>
+        <ul class="contrib">
+          <li><a href="https://arxiv.org/abs/2506.04178" target="_blank" rel="noopener">OpenThoughts</a>: data recipes for reasoning models</li>
+        </ul>
+        <p class="note">I contributed to this project; I'm not a listed author on the paper.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="updates" aria-labelledby="updates-h">
+    <h2 id="updates-h">Updates</h2>
+    <dl class="updates">
+      <dt>October 2026</dt><dd>Attended <a href="https://colm.cc/" target="_blank" rel="noopener">COLM 2026</a>, the Conference on Language Modeling, in San Francisco.</dd>
+      <dt>October 2026</dt><dd>Started <em>Trick or Treat</em>, on execution-grounded evals for agent decisions.</dd>
+      <dt>Fall 2026</dt><dd>Started a working paper on numerical encodings for tabular representation learning with Kara Liu and Michael S. Bernstein.</dd>
+      <dt>Fall 2025</dt><dd>Selected for the Stanford StartX incubator (13 of 200).</dd>
+      <dt>2025</dt><dd>Won three hackathons at AGI House.</dd>
+      <dt>June 2025</dt><dd>Started my M.S. at Stanford.</dd>
+      <dt>January 2025</dt><dd>Started working on AI agents and synthetic data at Stanford, contributing to OpenThoughts.</dd>
+      <dt>December 2024</dt><dd>Finished four years at TATA Technology, which was acquired.</dd>
+      <dt>September 2020</dt><dd>Co-founded TATA Technology in Hong Kong.</dd>
+    </dl>
+  </section>
+
+  <footer>owenliu.dev · owen2034@stanford.edu</footer>
+</div>
+<script>
+(function () {
+  var btn = document.getElementById('copy-email');
+  var line = document.getElementById('email-line');
+  var email = 'owen2034@stanford.edu';
+  btn.addEventListener('click', function () {
+    function done(msg) { line.textContent = msg; setTimeout(function () { line.textContent = email; }, 1800); }
+    function selectLine() { var r = document.createRange(); r.selectNodeContents(line); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); }
+    try { navigator.clipboard.writeText(email).then(function () { done('Copied ' + email); }, selectLine); } catch (e) { selectLine(); }
+  });
+})();
+</script>
+</body></html>
