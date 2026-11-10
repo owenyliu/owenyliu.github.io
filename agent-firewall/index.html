@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agent Firewall — UI/UX Summary · Owen Yajie Liu</title>
+<meta name="description" content="Agent Firewall pauses AI agents before they touch money, health data or passwords. Owen Liu's UI/UX summary and evaluation of its four surfaces: dashboard, phone approval, macOS popup, and public site.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='%231772d0'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+:root { --bg:#fff; --ink:#1a1a1a; --muted:#555; --link:#1772d0; --link-hover:#f09228; --line:#e6e6e6; --card:#f2f4f7; --local:#0f7a5c; --cloud:#1772d0; --denied:#c0392b; --sensitive:#8a6d00; --unsure:#6c4bb5; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#15171a; --ink:#e8e8e8; --muted:#a8a8a8; --link:#6aaeff; --link-hover:#f5ad5b; --line:#2c3036; --card:#23272e; --local:#62e4b4; --cloud:#92ccff; --denied:#ff808b; --sensitive:#ffcb5e; --unsure:#cdaeff; } }
+* { box-sizing:border-box; } body { margin:0; background:var(--bg); color:var(--ink); font-family:"Lato",Verdana,Helvetica,sans-serif; font-size:15px; line-height:1.6; }
+.page { max-width:800px; margin:0 auto; padding:32px 16px 48px; } a { color:var(--link); text-decoration:none; } a:hover { color:var(--link-hover); }
+h1 { font-weight:400; font-size:30px; line-height:1.25; margin:0 0 8px; } h2 { font-weight:400; font-size:22px; margin:36px 0 8px; }
+.back { font-size:14px; } .venue { font-style:italic; color:var(--muted); } .lede { font-size:17px; }
+table { width:100%; border-collapse:collapse; margin:12px 0; font-size:14.5px; } th, td { text-align:left; vertical-align:top; padding:9px 10px; border-bottom:1px solid var(--line); } th { font-weight:700; }
+.chips { display:flex; flex-wrap:wrap; gap:8px; margin:14px 0; } .chip { background:var(--card); border-radius:999px; padding:5px 12px; font-size:14px; } .chip strong { font-size:16px; }
+.sw { display:inline-block; width:11px; height:11px; border-radius:3px; margin-right:6px; vertical-align:-1px; }
+blockquote { margin:14px 0; padding:10px 16px; border-left:3px solid var(--link); background:var(--card); border-radius:0 6px 6px 0; }
+footer { margin-top:48px; padding-top:16px; border-top:1px solid var(--line); font-size:13px; color:var(--muted); text-align:right; }
+code { font-family:ui-monospace,Menlo,Consolas,monospace; font-size:13.5px; }
+</style>
+</head>
+<body>
+<div class="page">
+  <p class="back"><a href="../">← Owen Yajie Liu</a></p>
+  <h1>Agent Firewall: Your AI agent stops at the line</h1>
+  <p class="venue">AGI Healthcare Hackathon, sponsored by Lenovo, 2026 · Upstream project by Guoxuan Xu et al. · My contribution: UI/UX summary, evaluation, and presentation</p>
+  <p class="lede">A personal health agent needs your labs, records, and insurance to help you — and that is exactly what an attacker wants it to leak. Agent Firewall is a hybrid firewall that keeps sensitive agent data on your device, reads it with a local model when you ask it to, and stops at the line before money, health data, or passwords move — explaining the worst case in plain words and letting you decide.</p>
+
+  <div class="chips">
+    <span class="chip"><strong>16 → 1</strong>&nbsp; attacks that got out, off vs. on</span>
+    <span class="chip"><strong>9 → 0</strong>&nbsp; canary leaks to the cloud</span>
+    <span class="chip"><strong>350 / 350</strong>&nbsp; sensitive files found among 7,000 in 26s</span>
+    <span class="chip"><strong>629 passed</strong>&nbsp; / 5 skipped, full test suite</span>
+    <span class="chip"><strong>0</strong>&nbsp; false alarms on 7 benign tasks</span>
+  </div>
+  <p style="color:var(--muted);font-size:14px">Evaluation caveat, as the project states it: the attack numbers use a scripted model that always falls for the attack, so they test the firewall's plumbing, not how often a real model gets tricked. The one attack that still gets out (A14) is a paraphrased leak through an allowed host, kept in the demo on purpose.</p>
+
+  <h2>What I did</h2>
+  <p>I ran the full system end to end, verified the evaluation above, built the hackathon presentation around its real phone-approval UI, and wrote the project's <a href="https://github.com/g7xu/agent-firewall/blob/main/docs/ui-ux-summary.md">UI/UX summary</a> (branch <code>feature/ui-ux-summary</code>) — a complete account of its four user-facing surfaces as one design system, with strengths, known UX gaps, and recommendations. This page is the short version.</p>
+
+  <h2>One idea, four surfaces</h2>
+  <blockquote>Your AI agent stops at the line, and you decide what crosses it.</blockquote>
+  <table>
+    <tr><th style="width:22%">Surface</th><th>What it is</th><th style="width:34%">Key UX decision</th></tr>
+    <tr><td><strong>macOS popup</strong></td><td>Native dialog at the moment Claude Code tries to open a sensitive file: title, facts, fixed worst-case sentence, labelled AI detail, ⚠ reasons.</td><td>Deny is the default button; timing out also returns Deny.</td></tr>
+    <tr><td><strong>Phone approval</strong></td><td>The same card on your phone, with a live auto-deny countdown and a vibration when a new card arrives. Idle state: “Nothing needs you right now.”</td><td>Approve needs an 800&nbsp;ms press-and-hold; Deny is one tap. Friction follows risk.</td></tr>
+    <tr><td><strong>Dashboard</strong></td><td>The line drawn at full width: giant counts for On this device vs. Sent to the cloud, with Denied / Sensitive / Unreadable in the gate between them; a searchable audit list; a policy composer.</td><td>Every number is a filter button. Rules can only tighten — there is no “allow” rule to switch a protection off.</td></tr>
+    <tr><td><strong>Public site</strong></td><td>Hero, demo video framed by the same gate visual, a faithful popup mock, the five outcomes in prose, and proof figures with their caveats attached.</td><td>“What it doesn't do yet” is a section, not a footnote.</td></tr>
+  </table>
+
+  <h2>One design language</h2>
+  <p>The dashboard and the public site share the exact same colour tokens, so a colour means the same thing everywhere:</p>
+  <table>
+    <tr><th>Colour</th><th>Token</th><th>Meaning</th></tr>
+    <tr><td><span class="sw" style="background:#62e4b4"></span>Mint</td><td><code>--local #62e4b4</code></td><td>Stayed on this device</td></tr>
+    <tr><td><span class="sw" style="background:#92ccff"></span>Blue</td><td><code>--cloud #92ccff</code></td><td>Sent to the cloud</td></tr>
+    <tr><td><span class="sw" style="background:#ff808b"></span>Red</td><td><code>--denied #ff808b</code></td><td>Denied / blocked</td></tr>
+    <tr><td><span class="sw" style="background:#ffcb5e"></span>Amber</td><td><code>--sensitive #ffcb5e</code></td><td>Sensitive data involved</td></tr>
+    <tr><td><span class="sw" style="background:#cdaeff"></span>Violet</td><td><code>--unsure #cdaeff</code></td><td>Unreadable or unsure</td></tr>
+  </table>
+  <p>Risk wording follows a two-layer rule: the guaranteed worst-case sentence is fixed per action (“This data leaves your Mac and can't be taken back.” / “The money is gone and may not be recoverable.”), never written by a model. A local model may add one specific sentence, shown separately and labelled “AI-written detail, may be wrong”, and only if it passes filters that reject reassurance, invented numbers, and overstatement. No model makes the routing or approval decisions — those are deterministic, because the text being reviewed can be hostile. Both web surfaces build the DOM with <code>textContent</code> only, for the same reason: file names and commands on a card can be attacker-controlled.</p>
+
+  <h2>Known gaps &amp; my recommendations</h2>
+  <p>The full summary lists these from the project's own limits document. In short: the phone page's plain-HTTP token needs its warning on the page itself, not only in the docs; “Keep on my Mac” silently truncates long files at 20,000 characters and that caveat should reach the result card, the way AI worst-case text is labelled; expiring cards (90 seconds) need a “decide later” re-prompt that keeps deny-by-default; the tighten-only rule model deserves a one-sentence explanation in the composer itself; and the dashboard header should show scan coverage honestly — checked, partly read, and not yet scanned.</p>
+
+  <h2>Links</h2>
+  <p>
+    Upstream repository: <a href="https://github.com/g7xu/agent-firewall">github.com/g7xu/agent-firewall</a><br>
+    Full UI/UX summary (my contribution): <a href="https://github.com/g7xu/agent-firewall/blob/main/docs/ui-ux-summary.md">docs/ui-ux-summary.md</a> · branch <code>feature/ui-ux-summary</code><br>
+    Live project site: <a href="https://g7xu.dev/agent-firewall">g7xu.dev/agent-firewall</a>
+  </p>
+
+  <footer>Agent Firewall is hackathon-stage software: it raises the bar against mistakes and tricked agents, and is not a complete security boundary.</footer>
+</div>
+</body>
+</html>
