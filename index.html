@@ -5,241 +5,91 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Owen Yajie Liu</title>
 <meta name="description" content="Owen Yajie Liu: Stanford M.S. student working on AI agents, agent evaluation, and representation learning for clinical data.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='%231772d0'/></svg>">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap">
 <style>
-:root {
-  --bg: #ffffff; --ink: #1a1a1a; --muted: #555; --link: #1772d0; --link-hover: #f09228;
-  --hl: #ffffd0; --thumb: #f2f4f7; --thumb-ink: #1772d0; --line: #e6e6e6;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #15171a; --ink: #e8e8e8; --muted: #a8a8a8; --link: #6aaeff; --link-hover: #f5ad5b;
-    --hl: #2d2a16; --thumb: #23272e; --thumb-ink: #6aaeff; --line: #2c3036;
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: #fff; color: #111;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px; line-height: 1.6; font-weight: 300;
   }
-}
-:root[data-theme="dark"] {
-  --bg: #15171a; --ink: #e8e8e8; --muted: #a8a8a8; --link: #6aaeff; --link-hover: #f5ad5b;
-  --hl: #2d2a16; --thumb: #23272e; --thumb-ink: #6aaeff; --line: #2c3036;
-}
-* { box-sizing: border-box; }
-body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Lato", Verdana, Helvetica, sans-serif; font-size: 15px; line-height: 1.5; }
-.page { max-width: 800px; margin: 0 auto; padding: 32px 16px 48px; }
-a { color: var(--link); text-decoration: none; }
-a:hover, a:focus { color: var(--link-hover); }
-a:focus-visible, button:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
-
-/* Intro: text left, portrait right */
-.intro { display: grid; grid-template-columns: 1fr 220px; gap: 24px; align-items: center; }
-.intro h1 { font-weight: 400; font-size: 32px; text-align: center; margin: 0 0 12px; }
-.intro p { margin: 0 0 12px; }
-.links { text-align: center; margin-top: 8px; }
-.links .sep { color: var(--muted); margin: 0 4px; }
-.links button { font: inherit; color: var(--link); background: none; border: 0; padding: 0; cursor: pointer; }
-.links button:hover { color: var(--link-hover); }
-.email-out { text-align: center; min-height: 1.5em; color: var(--muted); font-size: 14px; margin-top: 4px; }
-.portrait { width: 200px; height: 200px; border-radius: 50%; margin: 0 auto; background: var(--thumb); display: grid; place-items: center; overflow: hidden; }
-.portrait svg { width: 100%; height: 100%; }
-.portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-h2 { font-weight: 400; font-size: 22px; margin: 40px 0 8px; }
-.entry { display: grid; grid-template-columns: 160px 1fr; gap: 20px; padding: 16px 0; align-items: center; }
-.entry.hl { background: var(--hl); border-radius: 6px; padding: 16px 12px; margin: 0 -12px; }
-.thumb { width: 160px; height: 120px; border-radius: 6px; background: var(--thumb); overflow: hidden; }
-.thumb svg { width: 100%; height: 100%; display: block; }
-.title { font-weight: 700; color: var(--link); }
-.entry p { margin: 6px 0 0; }
-.authors strong { font-weight: 700; }
-.venue { font-style: italic; color: var(--muted); }
-.note { font-style: italic; color: var(--muted); font-size: 14px; }
-.plain .entry { grid-template-columns: 1fr; padding: 8px 0; }
-footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); text-align: right; font-size: 13px; color: var(--muted); }
-
-@media (max-width: 600px) {
-  .intro { grid-template-columns: 1fr; }
-  .intro .portrait { order: -1; width: 150px; height: 150px; }
-  .entry { grid-template-columns: 1fr; gap: 10px; }
-  .thumb { width: 100%; height: 140px; }
-}
+  .page { max-width: 760px; margin: 0 auto; padding: 48px 20px 64px; }
+  h1 { font-size: 34px; font-weight: 400; margin: 0 0 24px; letter-spacing: .01em; }
+  .photo { width: 100%; height: 400px; object-fit: cover; object-position: center 22%; display: block; margin: 0 0 28px; }
+  p { margin: 0 0 14px; }
+  a { color: #111; text-decoration: underline; text-underline-offset: 3px; }
+  a:hover { color: #666; }
+  .links { margin: 18px 0 8px; }
+  .links a { margin-right: 14px; }
+  h2 { font-size: 20px; font-weight: 400; margin: 44px 0 10px; }
+  table { width: 100%; border-collapse: collapse; }
+  td { vertical-align: top; padding: 5px 0; font-weight: 300; }
+  td.date { width: 110px; white-space: nowrap; color: #111; padding-right: 16px; }
+  td .extra { color: #555; }
+  td .extra a { color: #555; }
+  @media (max-width: 600px) {
+    .photo { height: 260px; }
+    td.date { width: 76px; }
+  }
 </style>
 </head>
 <body>
 <div class="page">
 
-  <section class="intro">
-    <div>
-      <h1>Owen Yajie Liu</h1>
-      <p>I'm a Master's student at Stanford University studying Computer Science with Clinical Informatics Management. I work on <strong>AI agents</strong>: how we evaluate them, and the data we train them on. I've contributed to <a href="https://arxiv.org/abs/2506.04178">OpenThoughts</a>, an open project on data recipes for reasoning models, and I was admitted to the <a href="https://startx.com">Stanford StartX</a> incubator (Fall 2025, 13 of 200).</p>
-      <p>Before Stanford I co-founded TATA Technology in Hong Kong, a two-sided marketplace that matched 20,000+ families of autistic children with 200+ trained providers. It was acquired after four years. Outside of work I play pickleball (4.5 DUPR); I used to play table tennis professionally and coached nationally qualified youth players.</p>
-      <div class="links">
-        <button type="button" id="email-btn">Email</button><span class="sep">/</span><a href="Owen_Liu_CV.pdf">CV</a><span class="sep">/</span><a href="https://github.com/owenyliu">GitHub</a>
-      </div>
-      <p class="email-out" id="email-out" aria-live="polite"></p>
-    </div>
-    <div class="portrait">
-      <img src="headshot.jpg" alt="Owen Yajie Liu" width="200" height="200">
-    </div>
-  </section>
+  <h1>Owen Yajie Liu</h1>
 
-  <h2>Research</h2>
+  <img class="photo" src="headshot.jpg" alt="Owen Yajie Liu speaking at a panel">
 
-  <div class="entry hl">
-    <div class="thumb" aria-hidden="true">
-      <svg viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg">
-        <rect x="14" y="16" width="132" height="88" rx="6" fill="none" stroke="var(--thumb-ink)" stroke-width="2"/>
-        <line x1="14" y1="32" x2="146" y2="32" stroke="var(--thumb-ink)" stroke-width="2"/>
-        <text x="22" y="52" font-family="monospace" font-size="10" fill="var(--thumb-ink)">step 12  treat ✓</text>
-        <text x="22" y="68" font-family="monospace" font-size="10" fill="var(--thumb-ink)">step 13  trick?</text>
-        <text x="22" y="84" font-family="monospace" font-size="10" fill="var(--thumb-ink)">p=0.97 → replay</text>
-      </svg>
-    </div>
-    <div>
-      <span class="title">Trick or Treat: Can a fast AI tell which agent decisions are tricks?</span><br>
-      <span class="authors"><strong>Owen Yajie Liu</strong></span><br>
-      <span class="venue">Working paper, 2026</span>
-      <p>Takes decision points from real SWE-agent runs, labels each one by replaying it in its environment, and measures how much of the set fast "System 1" models can label at 95% precision, and how much replay that saves.</p>
-    </div>
-  </div>
+  <p>Research in data and evals. I am a Master's student at Stanford University (Clinical Informatics Management, School of Medicine). I am a researcher with the Stanford Artificial Intelligence Laboratory (SAIL), and a contributor to Terminal-Bench and <a href="https://arxiv.org/abs/2506.04178">OpenThoughts</a>.</p>
 
-  <div class="entry hl">
-    <div class="thumb" aria-hidden="true">
-      <svg viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg">
-        <g fill="var(--thumb-ink)" opacity=".55">
-          <rect x="22" y="78" width="12" height="18"/><rect x="42" y="64" width="12" height="32"/><rect x="62" y="34" width="12" height="62"/><rect x="102" y="50" width="12" height="46"/><rect x="122" y="26" width="12" height="70"/>
-        </g>
-        <line x1="96" y1="14" x2="96" y2="100" stroke="var(--thumb-ink)" stroke-width="2" stroke-dasharray="4 3"/>
-        <text x="88" y="110" font-family="monospace" font-size="9" fill="var(--thumb-ink)">gate 0.90</text>
-        <line x1="14" y1="100" x2="146" y2="100" stroke="var(--thumb-ink)" stroke-width="1.5"/>
-      </svg>
-    </div>
-    <div>
-      <a class="title" href="mythtriage/">Medical MythTriage: Can a fast decision model be trusted to pre-screen medical claims?</a><br>
-      <span class="authors"><strong>Owen Yajie Liu</strong></span><br>
-      <span class="venue">Stanford CS 329Z project, 2026</span>
-      <p>A fast model pre-screens medical claims behind a confidence gate held in code, not in a prompt. On expert-written claims the gate safely settles 16.5% of claims at 95% precision; on fluent, machine-made claims it safely settles none — the model&#8217;s confidence tracks how a claim reads, not whether it is true. Interactive replay of all 419 recorded runs on the project page.</p>
-      <p class="note">Code and data: <a href="https://github.com/owenyliu/medical-mythtriage">github.com/owenyliu/medical-mythtriage</a></p>
-    </div>
-  </div>
+  <p>Before Stanford, I co-founded TATA Technology in Hong Kong, a marketplace that matched 20,000+ families of autistic children with trained providers; it was acquired after four years. Earlier, I was a director at J.P. Morgan. I read mathematics at Baruch College (B.S., top 1%).</p>
 
-  <div class="entry hl">
-    <div class="thumb" aria-hidden="true">
-      <svg viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg">
-        <path d="M14 96 C40 96 50 30 70 30 S100 96 146 96" fill="none" stroke="var(--thumb-ink)" stroke-width="2"/>
-        <g fill="var(--thumb-ink)" opacity=".55">
-          <rect x="20" y="88" width="14" height="8"/><rect x="38" y="70" width="14" height="26"/><rect x="56" y="40" width="14" height="56"/>
-          <rect x="74" y="34" width="14" height="62"/><rect x="92" y="62" width="14" height="34"/><rect x="110" y="84" width="14" height="12"/>
-        </g>
-        <line x1="14" y1="100" x2="146" y2="100" stroke="var(--thumb-ink)" stroke-width="1.5"/>
-      </svg>
-    </div>
-    <div>
-      <span class="title">Evaluating numerical preprocessing methods for tabular representation learning</span><br>
-      <span class="authors"><strong>Owen Yajie Liu</strong>, Kara Liu, Michael S. Bernstein</span><br>
-      <span class="venue">Working paper, 2026</span>
-      <p>A neural network only sees vectors, so a value like heart rate has to be encoded first, and that choice decides which differences look big. We test how different encodings change what a variational autoencoder learns about each ICU patient.</p>
-    </div>
-  </div>
+  <p class="links">
+    <a href="mailto:owen2034@stanford.edu">Email</a>
+    <a href="Owen_Liu_CV.pdf">CV</a>
+    <a href="https://github.com/owenyliu">GitHub</a>
+    <a href="https://www.linkedin.com/in/owenliu">LinkedIn</a>
+  </p>
 
-  <div class="entry">
-    <div class="thumb" aria-hidden="true">
-      <svg viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg">
-        <g fill="none" stroke="var(--thumb-ink)" stroke-width="2">
-          <circle cx="40" cy="60" r="14"/><circle cx="80" cy="34" r="14"/><circle cx="80" cy="86" r="14"/><circle cx="120" cy="60" r="14"/>
-          <line x1="53" y1="53" x2="67" y2="41"/><line x1="53" y1="67" x2="67" y2="79"/><line x1="93" y1="41" x2="107" y2="53"/><line x1="93" y1="79" x2="107" y2="67"/>
-        </g>
-      </svg>
-    </div>
-    <div>
-      <a class="title" href="https://arxiv.org/abs/2506.04178">OpenThoughts: Data recipes for reasoning models</a><br>
-      <span class="authors">Etash Guha, Ryan Marten, Sedrick Keh, et al.</span><br>
-      <span class="venue">arXiv 2506.04178, 2025</span>
-      <p>Open project on building training data for reasoning models. I contributed to the project at Stanford (2025).</p>
-      <p class="note">Contributor; not a listed author.</p>
-    </div>
-  </div>
+  <h2>Papers</h2>
+  <table>
+    <tr>
+      <td class="date">2026</td>
+      <td><a href="https://owenyliu.github.io/mythtriage/">Medical MythTriage: Can a fast decision model be trusted to pre-screen medical claims?</a> <span class="extra">(<a href="https://github.com/owenyliu/medical-mythtriage">code</a>)</span></td>
+    </tr>
+    <tr>
+      <td class="date">2026</td>
+      <td>Trick or Treat: Can a fast AI tell which agent decisions are tricks?</td>
+    </tr>
+    <tr>
+      <td class="date">2026</td>
+      <td>Evaluating numerical preprocessing methods for tabular representation learning. <span class="extra">With Kara Liu and Michael S. Bernstein.</span></td>
+    </tr>
+    <tr>
+      <td class="date">2025</td>
+      <td><a href="https://arxiv.org/abs/2506.04178">OpenThoughts: Data recipes for reasoning models</a>. <span class="extra">Contributor.</span></td>
+    </tr>
+  </table>
 
-  <h2>Hackathons</h2>
+  <h2>Projects &amp; Other</h2>
+  <table>
+    <tr>
+      <td class="date">2026</td>
+      <td><a href="https://owenyliu.github.io/agent-firewall/">Agent Firewall: Your AI agent stops at the line</a>. <span class="extra">AGI Healthcare Hackathon.</span></td>
+    </tr>
+    <tr>
+      <td class="date">2026</td>
+      <td>Founder, AI Infra for the Space Economy, a student-led Stanford class.</td>
+    </tr>
+    <tr>
+      <td class="date">2025</td>
+      <td>Stanford StartX incubator, Fall 2025 cohort (13 of 200).</td>
+    </tr>
+    <tr>
+      <td class="date">2025</td>
+      <td>3x hackathon winner, AGI House.</td>
+    </tr>
+  </table>
 
-  <div class="entry hl">
-    <div class="thumb" aria-hidden="true">
-      <svg viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg">
-        <line x1="62" y1="14" x2="62" y2="106" stroke="var(--thumb-ink)" stroke-width="3"/>
-        <line x1="98" y1="14" x2="98" y2="106" stroke="var(--thumb-ink)" stroke-width="3"/>
-        <text x="30" y="66" text-anchor="middle" font-family="monospace" font-size="11" fill="var(--thumb-ink)">local</text>
-        <text x="128" y="66" text-anchor="middle" font-family="monospace" font-size="11" fill="var(--thumb-ink)">cloud</text>
-        <text x="80" y="52" text-anchor="middle" font-family="monospace" font-size="9" fill="var(--thumb-ink)">16 &#8594; 1</text>
-      </svg>
-    </div>
-    <div>
-      <a class="title" href="agent-firewall/">Agent Firewall: Your AI agent stops at the line</a><br>
-      <span class="authors"><strong>Owen Yajie Liu</strong> (UI/UX summary &amp; evaluation), Guoxuan Xu et al.</span><br>
-      <span class="venue">AGI Healthcare Hackathon, sponsored by Lenovo, 2026</span>
-      <p>A hybrid firewall that keeps sensitive agent data on your device and asks your phone before risky actions. I ran and evaluated the full system (629 tests passing; scripted attacks that got out fell from 16 to 1, canary leaks from 9 to 0) and wrote its UI/UX summary: how the dashboard, phone approval page, macOS popup and public site share one design language built around a single line between &#8220;on this device&#8221; and &#8220;sent to the cloud&#8221;, a fixed worst-case sentence on every approval card, and hold-to-approve friction where it matters.</p>
-      <p class="note">Project page: <a href="agent-firewall/">owenyliu.github.io/agent-firewall/</a> &middot; Upstream: <a href="https://github.com/g7xu/agent-firewall">github.com/g7xu/agent-firewall</a> &middot; My contribution branch: <a href="https://github.com/owenyliu/agent-firewall/blob/feature/ui-ux-summary/docs/ui-ux-summary.md">docs/ui-ux-summary.md</a></p>
-    </div>
-  </div>
-
-  <div class="entry">
-    <div class="thumb" aria-hidden="true">
-      <svg viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg">
-        <g fill="none" stroke="var(--thumb-ink)" stroke-width="2">
-          <path d="M60 30 h40 v18 a20 20 0 0 1 -40 0 z"/><path d="M60 36 h-12 a10 10 0 0 0 12 14"/><path d="M100 36 h12 a10 10 0 0 1 -12 14"/>
-          <line x1="80" y1="68" x2="80" y2="84"/><rect x="64" y="84" width="32" height="8" rx="2"/>
-        </g>
-        <text x="80" y="110" text-anchor="middle" font-family="Lato, sans-serif" font-size="13" font-weight="700" fill="var(--thumb-ink)">3×</text>
-      </svg>
-    </div>
-    <div>
-      <span class="title">3x Hackathon Winner, AGI House</span><br>
-      <span class="venue">2025</span>
-      <p>Built and demoed LLM-agent and marketplace prototypes under time pressure.</p>
-    </div>
-  </div>
-
-  <h2>Conferences</h2>
-  <div class="plain">
-    <div class="entry">
-      <div><a class="title" href="https://colm.cc/">Conference on Language Modeling (COLM 2026)</a><br><span class="venue">Attendee, San Francisco, October 2026</span></div>
-    </div>
-  </div>
-
-  <h2>Entrepreneurship</h2>
-  <div class="plain">
-    <div class="entry">
-      <div><span class="title">TATA Technology Inc., Co-Founder</span><br><span class="venue">Hong Kong, 2020 – 2024 · acquired</span>
-      <p>Two-sided healthcare marketplace matching families of autistic children with vetted, trained providers; grew to 20,000+ families and 200+ providers and led a 25-person team.</p></div>
-    </div>
-    <div class="entry">
-      <div><span class="title">Stanford StartX Incubator</span><br><span class="venue">Fall 2025 cohort, 13 of 200 selected</span></div>
-    </div>
-  </div>
-
-  <h2>Sports</h2>
-  <div class="plain">
-    <div class="entry"><div><span class="title">Table tennis</span><br><span class="venue">Former professional player; coach of nationally qualified youth</span></div></div>
-    <div class="entry"><div><span class="title">Pickleball</span><br><span class="venue">4.5 DUPR</span></div></div>
-  </div>
-
-  <footer>Design adapted from <a href="https://github.com/jonbarron/jonbarron_website">Jon Barron's website</a>.</footer>
 </div>
-
-<script>
-(function () {
-  // The address is never written in the page; it is assembled only when a person clicks.
-  var btn = document.getElementById('email-btn');
-  var out = document.getElementById('email-out');
-  function addr() { return ['owen', '2034'].join('') + String.fromCharCode(64) + ['stanford', 'edu'].join('.'); }
-  btn.addEventListener('click', function () {
-    var email = addr();
-    out.innerHTML = '';
-    var a = document.createElement('a');
-    a.href = 'mail' + 'to:' + email; a.textContent = email;
-    out.appendChild(a);
-    try { navigator.clipboard.writeText(email).then(function () { a.insertAdjacentText('afterend', ' (copied)'); }, function () {}); } catch (e) {}
-  });
-})();
-</script>
 </body>
 </html>
