@@ -4,6 +4,7 @@
 
 ## Readings (notes, agent-readable Markdown)
 
+- [Language Agents: From Next-Token Prediction to Digital Automation](https://owenyliu.github.io/readings/md/language-agents.md): Reading notes on Shunyu Yao's Princeton PhD dissertation (May 2024, advisor Karthik Narasimhan): WebShop, InterCode, ReAct, Tree of Thoughts, and CoALA.
 - [SWE-chat: Tracing One Full Session](https://owenyliu.github.io/readings/md/swe-chat.md): A walk-through of real coding-agent sessions from the SWE-chat dataset — where the agent drifts, and what pushback looks like.
 - [Medical MythTriage: Can a Fast Decision Model Be Trusted to Pre-Screen Medical Claims?](https://owenyliu.github.io/readings/md/mythtriage.md): My CS329Z midway report: a fast model settles medical claims only when it is at least 95% precise — on HealthFC it is, on MEDFACT it is not.
 - [Ricursive Intelligence: A Research Pack (and a Name Trap)](https://owenyliu.github.io/readings/md/ricursive.md): Notes on Anna Goldie and Azalia Mirhoseini’s AI chip-design company — and why it is not Richard Socher’s Recursive Superintelligence.
