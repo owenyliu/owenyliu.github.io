@@ -1,0 +1,18 @@
+# Owen Liu
+
+> Stanford researcher (SAIL) working on data and evals: agent evaluation, decision models, and representation learning for clinical data. Before Stanford, co-founded TATA Technology (a marketplace that matched 20,000+ families of autistic children with trained providers) and was a director at J.P. Morgan.
+
+## Readings (notes, agent-readable Markdown)
+
+- [SWE-chat: Tracing One Full Session](https://owenyliu.github.io/readings/md/swe-chat.md): A walk-through of real coding-agent sessions from the SWE-chat dataset — where the agent drifts, and what pushback looks like.
+- [Medical MythTriage: Can a Fast Decision Model Be Trusted to Pre-Screen Medical Claims?](https://owenyliu.github.io/readings/md/mythtriage.md): My CS329Z midway report: a fast model settles medical claims only when it is at least 95% precise — on HealthFC it is, on MEDFACT it is not.
+- [Ricursive Intelligence: A Research Pack (and a Name Trap)](https://owenyliu.github.io/readings/md/ricursive.md): Notes on Anna Goldie and Azalia Mirhoseini’s AI chip-design company — and why it is not Richard Socher’s Recursive Superintelligence.
+- [Evaluating Numerical Preprocessing for Tabular Representation Learning — Findings](https://owenyliu.github.io/readings/md/cs197-findings.md): CS197 Project 3 findings (with Max Lee and Rita Xiang): the standardized baseline is genuinely good, and prediction and fidelity dissociate.
+- [Calibration Benchmark — Reading Notes](https://owenyliu.github.io/readings/md/calibration-benchmark.md): What would a good benchmark for agent calibration look like? Non-toy tasks, memory, and confidence that matches reality.
+- [COLM 2026 Workshop Papers, Explained](https://owenyliu.github.io/readings/md/colm-2026.md): Plain-English explainers of 11 Stanford and 4 Berkeley papers from the COLM 2026 workshops.
+
+## Pages
+
+- [Homepage](https://owenyliu.github.io/)
+- [Readings index](https://owenyliu.github.io/readings/)
+- [Medical MythTriage project](https://owenyliu.github.io/mythtriage/)
