@@ -42,6 +42,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--link); outline-
 .email-out { text-align: center; min-height: 1.5em; color: var(--muted); font-size: 14px; margin-top: 4px; }
 .portrait { width: 200px; height: 200px; border-radius: 50%; margin: 0 auto; background: var(--thumb); display: grid; place-items: center; overflow: hidden; }
 .portrait svg { width: 100%; height: 100%; }
+.portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 h2 { font-weight: 400; font-size: 22px; margin: 40px 0 8px; }
 .entry { display: grid; grid-template-columns: 160px 1fr; gap: 20px; padding: 16px 0; align-items: center; }
@@ -77,9 +78,8 @@ footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line);
       </div>
       <p class="email-out" id="email-out" aria-live="polite"></p>
     </div>
-    <div class="portrait" aria-hidden="true">
-      <!-- Placeholder until a headshot is added -->
-      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><text x="100" y="118" text-anchor="middle" font-family="Lato, sans-serif" font-size="56" fill="var(--thumb-ink)">OYL</text></svg>
+    <div class="portrait">
+      <img src="headshot.jpg" alt="Owen Yajie Liu" width="200" height="200">
     </div>
   </section>
 
