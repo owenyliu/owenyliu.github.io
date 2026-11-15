@@ -1,6 +1,6 @@
 # Owen Liu
 
-> Stanford researcher (SAIL) working on data and evals: agent evaluation, decision models, and representation learning for clinical data. Before Stanford, co-founded TATA Technology (a marketplace that matched 20,000+ families of autistic children with trained providers) and was a director at J.P. Morgan.
+> Stanford researcher (SAIL) working on data and evals: agent evaluation, decision models, and representation learning for clinical data. Before Stanford, co-founded TATA Technology (a marketplace that matched 20,000+ families of autistic children with trained providers).
 
 ## Readings (notes, agent-readable Markdown)
 
