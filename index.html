@@ -8,87 +8,121 @@
 <style>
   * { box-sizing: border-box; }
   body {
-    margin: 0; background: #fff; color: #111;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 16px; line-height: 1.6; font-weight: 300;
+    margin: 0; background: #fff; color: #333;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 18px; line-height: 1.4;
   }
-  .page { max-width: 760px; margin: 0 auto; padding: 48px 20px 64px; }
-  h1 { font-size: 34px; font-weight: 400; margin: 0 0 24px; letter-spacing: .01em; }
-  .photo { width: 100%; height: 400px; object-fit: cover; object-position: center 22%; display: block; margin: 0 0 28px; }
-  p { margin: 0 0 14px; }
-  a { color: #111; text-decoration: underline; text-underline-offset: 3px; }
-  a:hover { color: #666; }
-  .links { margin: 18px 0 8px; }
-  .links a { margin-right: 14px; }
-  h2 { font-size: 20px; font-weight: 400; margin: 44px 0 10px; }
-  table { width: 100%; border-collapse: collapse; }
-  td { vertical-align: top; padding: 5px 0; font-weight: 300; }
-  td.date { width: 110px; white-space: nowrap; color: #111; padding-right: 16px; }
-  td .extra { color: #555; }
-  td .extra a { color: #555; }
-  @media (max-width: 600px) {
-    .photo { height: 260px; }
-    td.date { width: 76px; }
+  .container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+  a { color: #4183c4; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Masthead: name on the left, icons on the right */
+  .masthead {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 0; margin-bottom: 50px; border-bottom: 1px solid #eee;
+  }
+  .site-name { margin: 0; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 28px; font-weight: 300; line-height: 1.7; }
+  .site-name a { color: #333; }
+  .site-name a:hover { text-decoration: none; }
+  .site-description { margin: -5px 0 0; font-size: 16px; color: #666; }
+  nav { display: flex; align-items: center; }
+  nav a { color: #111; margin-left: 20px; display: inline-flex; }
+  nav a:hover { color: #4183c4; }
+  nav svg { width: 32px; height: 32px; }
+
+  /* Page */
+  h1 { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 30px; font-weight: 700; color: #222; margin: 30px 0 15px; line-height: 1.7; }
+  p { margin: 15px 0; }
+  .photo { float: right; width: 220px; height: 220px; padding-left: 10px; margin: 0 0 10px 10px; object-fit: cover; }
+  ul { margin: 15px 0; padding-left: 30px; }
+  li p { margin: 15px 0; }
+  .clear { clear: both; }
+  footer { margin: 50px 0 30px; padding-top: 15px; border-top: 1px solid #eee; font-size: 14px; color: #999; }
+
+  @media (max-width: 640px) {
+    body { font-size: 16px; }
+    .masthead { flex-direction: column; align-items: flex-start; gap: 10px; margin-bottom: 20px; }
+    nav a { margin: 0 16px 0 0; }
+    nav svg { width: 26px; height: 26px; }
+    .photo { width: 140px; height: 140px; }
   }
 </style>
 </head>
 <body>
-<div class="page">
+<div class="container">
 
-  <h1>Owen Yajie Liu</h1>
+  <header class="masthead">
+    <div>
+      <h1 class="site-name"><a href="/">Owen Yajie Liu</a></h1>
+      <p class="site-description">Stanford University</p>
+    </div>
+    <nav>
+        <a href="mailto:owen2034@stanford.edu" title="Email" aria-label="Email"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471z"/></svg></a>
+        <!-- TODO: replace with your Google Scholar profile URL -->
+        <a href="https://scholar.google.com/" target="_blank" rel="noopener" title="Google Scholar" aria-label="Google Scholar"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917z"/><path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466z"/></svg></a>
+        <a href="https://github.com/owenyliu" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/></svg></a>
+        <a href="https://x.com/Stanford_Owen_L" target="_blank" rel="noopener" title="Twitter / X" aria-label="Twitter / X"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/></svg></a>
+        <a href="https://www.linkedin.com/in/owenliu" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/></svg></a>
+    </nav>
+  </header>
 
-  <img class="photo" src="headshot.jpg" alt="Owen Yajie Liu speaking at a panel">
+  <main>
+    <h1>About</h1>
 
-  <p>Research in data and evals. I am a Master's student at Stanford University (Clinical Informatics Management, School of Medicine). I am a researcher with the Stanford Artificial Intelligence Laboratory (SAIL), and a contributor to Terminal-Bench and <a href="https://arxiv.org/abs/2506.04178">OpenThoughts</a>.</p>
+    <img class="photo" src="headshot.jpg" alt="Owen Yajie Liu">
 
-  <p>Before Stanford, I co-founded TATA Technology in Hong Kong, a marketplace that matched 20,000+ families of autistic children with trained providers; it was acquired after four years. Earlier, I was a director at J.P. Morgan. I read mathematics at Baruch College (B.S., top 1%).</p>
+    <p>I am a Master's student at Stanford University (Clinical Informatics Management, School of Medicine) and a researcher with the Stanford Artificial Intelligence Laboratory (SAIL).</p>
 
-  <p class="links">
-    <a href="mailto:owen2034@stanford.edu">owen2034 AT Stanford.edu</a>
-    <a href="Owen_Liu_CV.pdf">CV</a>
-    <a href="https://github.com/owenyliu">GitHub</a>
-    <a href="https://www.linkedin.com/in/owenliu">LinkedIn</a>
-  </p>
+    <p>I work on data and evals for AI agents. I am a contributor to Terminal-Bench and <a href="https://arxiv.org/abs/2506.04178" target="_blank" rel="noopener">OpenThoughts</a>.</p>
 
-  <h2>Papers</h2>
-  <table>
-    <tr>
-      <td class="date">2026</td>
-      <td><a href="https://owenyliu.github.io/mythtriage/">Medical MythTriage: Can a fast decision model be trusted to pre-screen medical claims?</a> <span class="extra">(<a href="https://github.com/owenyliu/medical-mythtriage">code</a>)</span></td>
-    </tr>
-    <tr>
-      <td class="date">2026</td>
-      <td>Trick or Treat: Can a fast AI tell which agent decisions are tricks?</td>
-    </tr>
-    <tr>
-      <td class="date">2026</td>
-      <td>Evaluating numerical preprocessing methods for tabular representation learning. <span class="extra">With Kara Liu and Michael S. Bernstein.</span></td>
-    </tr>
-    <tr>
-      <td class="date">2025</td>
-      <td><a href="https://arxiv.org/abs/2506.04178">OpenThoughts: Data recipes for reasoning models</a>. <span class="extra">Contributor.</span></td>
-    </tr>
-  </table>
+    <p>Before Stanford, I co-founded TATA Technology in Hong Kong, a marketplace that matched 20,000+ families of autistic children with trained providers; it was acquired after four years. Earlier, I was a director at J.P. Morgan. I read mathematics at Baruch College (B.S., top 1%).</p>
 
-  <h2>Projects &amp; Other</h2>
-  <table>
-    <tr>
-      <td class="date">2026</td>
-      <td><a href="https://owenyliu.github.io/agent-firewall/">Agent Firewall: Your AI agent stops at the line</a>. <span class="extra">AGI Healthcare Hackathon.</span></td>
-    </tr>
-    <tr>
-      <td class="date">2026</td>
-      <td>Founder, AI Infra for the Space Economy, a student-led Stanford class.</td>
-    </tr>
-    <tr>
-      <td class="date">2025</td>
-      <td>Stanford StartX incubator, Fall 2025 cohort (13 of 200).</td>
-    </tr>
-    <tr>
-      <td class="date">2025</td>
-      <td>3x hackathon winner, AGI House.</td>
-    </tr>
-  </table>
+    <div class="clear"></div>
+
+    <h1>Selected work</h1>
+    <ul>
+      <li>
+        <p><strong>Medical MythTriage: Can a fast decision model be trusted to pre-screen medical claims?</strong><br>
+        Owen Yajie Liu<br>
+        2026<br>
+        <a href="https://owenyliu.github.io/mythtriage/" target="_blank" rel="noopener">project page</a> |
+        <a href="https://github.com/owenyliu/medical-mythtriage" target="_blank" rel="noopener">code</a></p>
+      </li>
+      <li>
+        <p><strong>Trick or Treat: Can a fast AI tell which agent decisions are tricks?</strong><br>
+        Owen Yajie Liu<br>
+        2026</p>
+      </li>
+      <li>
+        <p><strong>Evaluating numerical preprocessing methods for tabular representation learning</strong><br>
+        Owen Yajie Liu, Kara Liu, Michael S. Bernstein<br>
+        2026</p>
+      </li>
+      <li>
+        <p><strong>OpenThoughts: Data recipes for reasoning models</strong><br>
+        OpenThoughts Team (contributor)<br>
+        arXiv 2025<br>
+        <a href="https://arxiv.org/abs/2506.04178" target="_blank" rel="noopener">paper</a></p>
+      </li>
+      <li>
+        <p><strong>Agent Firewall: Your AI agent stops at the line</strong><br>
+        AGI Healthcare Hackathon, 2026<br>
+        <a href="https://owenyliu.github.io/agent-firewall/" target="_blank" rel="noopener">demo</a></p>
+      </li>
+    </ul>
+
+    <h1>Other</h1>
+    <ul>
+      <li>Founder, AI Infra for the Space Economy, a student-led Stanford class (2026).</li>
+      <li>Stanford StartX incubator, Fall 2025 cohort (13 of 200).</li>
+      <li>3x hackathon winner, AGI House (2025).</li>
+    </ul>
+
+    <h1>Readings</h1>
+    <p>Notes from papers I have read, mostly on AI agents, evaluation, and data. <a href="readings/">See all readings →</a></p>
+  </main>
+
+  <footer>Layout inspired by <a href="https://ysymyth.github.io/" target="_blank" rel="noopener">Shunyu Yao</a>'s homepage.</footer>
 
 </div>
 </body>
