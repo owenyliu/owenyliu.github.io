@@ -2,111 +2,56 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="icon" type="image/png" sizes="512x512" href="../favicon.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Readings – Owen Yajie Liu</title>
-<meta name="description" content="Notes from papers Owen Yajie Liu has read.">
+<title>Readings — Owen Liu</title>
 <style>
   * { box-sizing: border-box; }
-  body { margin: 0; background: #fff; color: #333; font-family: Helvetica, Arial, sans-serif; font-size: 18px; line-height: 1.4; }
-  .container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
-  a { color: #4183c4; text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  .masthead { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; margin-bottom: 40px; border-bottom: 1px solid #eee; }
-  .site-name { margin: 0; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 28px; font-weight: 300; line-height: 1.7; }
-  .site-name a { color: #333; }
-  .site-name a:hover { text-decoration: none; }
-  .site-description { margin: -5px 0 0; font-size: 16px; color: #666; }
-  .back { font-size: 16px; }
-  h1 { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 30px; font-weight: 700; color: #222; margin: 0 0 10px; }
-  .intro { margin: 0 0 20px; }
-  .tags { margin: 0 0 30px; font-size: 16px; color: #999; }
-  .tags button { background: none; border: 0; padding: 0; font: inherit; color: #999; cursor: pointer; }
-  .tags button:hover { color: #4183c4; }
-  .tags button.active { color: #222; font-weight: 700; }
-  .year { font-size: 18px; font-weight: 700; color: #222; margin: 24px 0 6px; }
-  .entry { display: grid; grid-template-columns: 60px 1fr; gap: 0 12px; padding: 3px 0; }
-  .date { color: #999; font-variant-numeric: tabular-nums; }
-  .title a { color: #333; font-weight: 700; }
-  .title a:hover { color: #4183c4; text-decoration: none; }
-  .meta { font-size: 15px; color: #888; }
-  .meta a { color: #4183c4; }
-  footer { margin: 50px 0 30px; padding-top: 15px; border-top: 1px solid #eee; font-size: 14px; color: #999; }
-  @media (max-width: 640px) { body { font-size: 16px; } .entry { grid-template-columns: 50px 1fr; } }
+  body { margin: 0; background: #fff; color: #111; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.6; font-weight: 300; }
+  .page { max-width: 760px; margin: 0 auto; padding: 48px 20px 64px; }
+  h1 { font-size: 30px; font-weight: 400; margin: 0 0 18px; letter-spacing: .01em; line-height: 1.3; }
+  h2 { font-size: 20px; font-weight: 400; margin: 36px 0 10px; }
+  h3 { font-size: 17px; font-weight: 500; margin: 26px 0 8px; }
+  h4 { font-size: 16px; font-weight: 500; margin: 20px 0 6px; }
+  p { margin: 0 0 14px; }
+  a { color: #111; text-decoration: underline; text-underline-offset: 3px; }
+  a:hover { color: #666; }
+  .back { color: #555; margin-bottom: 26px; }
+  .meta { color: #555; margin-bottom: 22px; }
+  .meta a { color: #555; margin-right: 12px; }
+  table { width: 100%; border-collapse: collapse; }
+  td { vertical-align: top; padding: 5px 0; font-weight: 300; }
+  td.date { width: 70px; white-space: nowrap; padding-right: 16px; }
+  td .extra { color: #555; }
+  td .extra a { color: #555; }
+  .note-body table { margin: 14px 0; font-size: 15px; }
+  .note-body th, .note-body td { border: 1px solid #ddd; padding: 6px 9px; }
+  .note-body img { max-width: 100%; }
+  blockquote { margin: 14px 0; padding: 2px 16px; border-left: 3px solid #ccc; color: #333; }
+  code { font-family: Menlo, Consolas, monospace; font-size: 14px; background: #f5f5f5; padding: 1px 4px; }
+  pre { background: #f5f5f5; padding: 12px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  .mindmap { width: 100%; height: auto; display: block; margin: 8px 0 10px; }
 </style>
 </head>
 <body>
-<div class="container">
+<div class="page">
+<p class="back">&larr; <a href="../">Owen Liu</a></p>
+<h1>Readings</h1>
+<p>Notes on papers, projects, and companies I am reading and thinking about. Each note links to a plain-Markdown version that agents can read directly (see <a href="../llms.txt">llms.txt</a>).</p>
+<img class="mindmap" src="mindmap.svg" alt="Mind map of Owen Liu's 2026 notes">
+<h2>2026</h2>
+<table>
+    <tr><td class="date">11-13</td><td><a href="swe-chat/"><b>SWE-chat: Tracing One Full Session</b></a><br><span class="extra">A walk-through of real coding-agent sessions from the SWE-chat dataset — where the agent drifts, and what pushback looks like.</span></td></tr>
+    <tr><td class="date">11-07</td><td><a href="mythtriage/"><b>Medical MythTriage: Can a Fast Decision Model Be Trusted to Pre-Screen Medical Claims?</b></a><br><span class="extra">My CS329Z midway report: a fast model settles medical claims only when it is at least 95% precise — on HealthFC it is, on MEDFACT it is not.</span></td></tr>
+    <tr><td class="date">11-09</td><td><a href="ricursive/"><b>Ricursive Intelligence: A Research Pack (and a Name Trap)</b></a><br><span class="extra">Notes on Anna Goldie and Azalia Mirhoseini’s AI chip-design company — and why it is not Richard Socher’s Recursive Superintelligence.</span></td></tr>
+    <tr><td class="date">10-31</td><td><a href="cs197-findings/"><b>Evaluating Numerical Preprocessing for Tabular Representation Learning — Findings</b></a><br><span class="extra">CS197 Project 3 findings (with Max Lee and Rita Xiang): the standardized baseline is genuinely good, and prediction and fidelity dissociate.</span></td></tr>
+    <tr><td class="date">10-14</td><td><a href="calibration-benchmark/"><b>Calibration Benchmark — Reading Notes</b></a><br><span class="extra">What would a good benchmark for agent calibration look like? Non-toy tasks, memory, and confidence that matches reality.</span></td></tr>
+    <tr><td class="date">10-09</td><td><a href="colm-2026/"><b>COLM 2026 Workshop Papers, Explained</b></a><br><span class="extra">Plain-English explainers of 11 Stanford and 4 Berkeley papers from the COLM 2026 workshops.</span></td></tr>
+</table>
 
-  <header class="masthead">
-    <div>
-      <h1 class="site-name"><a href="/">Owen Yajie Liu</a></h1>
-      <p class="site-description">Stanford University</p>
-    </div>
-    <a class="back" href="/">← Home</a>
-  </header>
-
-  <main>
-    <h1>Readings</h1>
-    <p class="intro">Notes from papers I have read, mostly on AI agents, evaluation, and data.</p>
-    <div class="tags" id="tags"></div>
-    <div id="list"></div>
-  </main>
-
-  <footer>© <span id="yr"></span> Owen Yajie Liu</footer>
 </div>
-
-<script>
-/*
-  HOW TO ADD A READING
-  Add one object to the top of READINGS:
-    date:  "YYYY-MM-DD"  (the day you read it)
-    title: paper title
-    url:   link to the paper
-    tags:  any labels you like; the filter buttons are built from these
-    notes: (optional) link to your notes, e.g. "notes/react.html" or a Google Doc / Notion link
-    note:  (optional) one-line takeaway shown under the title
-
-  The entries below are STARTER EXAMPLES: replace the dates and add your own notes.
-*/
-const READINGS = [
-  { date: "2026-11-10", title: "Terminal-Bench: Benchmarking agents on hard, realistic tasks in command line interfaces", url: "https://www.tbench.ai/", tags: ["Agents", "Benchmark"] },
-  { date: "2026-11-03", title: "τ-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains", url: "https://arxiv.org/abs/2406.12045", tags: ["Agents", "Benchmark"] },
-  { date: "2026-10-27", title: "SWE-bench: Can Language Models Resolve Real-World GitHub Issues?", url: "https://arxiv.org/abs/2310.06770", tags: ["Agents", "Benchmark"] },
-  { date: "2026-10-20", title: "OpenThoughts: Data Recipes for Reasoning Models", url: "https://arxiv.org/abs/2506.04178", tags: ["Data", "Reasoning"] },
-  { date: "2025-10-12", title: "Reflexion: Language Agents with Verbal Reinforcement Learning", url: "https://arxiv.org/abs/2303.11366", tags: ["Agents"] },
-  { date: "2025-10-05", title: "ReAct: Synergizing Reasoning and Acting in Language Models", url: "https://arxiv.org/abs/2210.03629", tags: ["Agents", "Reasoning"] },
-];
-
-const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-const allTags = ["All", ...[...new Set(READINGS.flatMap(r => r.tags || []))].sort()];
-let current = "All";
-
-function renderTags() {
-  document.getElementById("tags").innerHTML = allTags
-    .map(t => `<button class="${t === current ? "active" : ""}" data-tag="${esc(t)}">${esc(t)}</button>`)
-    .join(" · ");
-  document.querySelectorAll("#tags button").forEach(b =>
-    b.addEventListener("click", () => { current = b.dataset.tag; renderTags(); renderList(); }));
-}
-
-function renderList() {
-  const items = READINGS
-    .filter(r => current === "All" || (r.tags || []).includes(current))
-    .sort((a, b) => b.date.localeCompare(a.date));
-  let html = "", lastYear = "";
-  for (const r of items) {
-    const [y, m, d] = r.date.split("-");
-    if (y !== lastYear) { html += `<div class="year">${y}</div>`; lastYear = y; }
-    const extra = [];
-    if (r.note) extra.push(esc(r.note));
-    if (r.notes) extra.push(`<a href="${esc(r.notes)}">notes</a>`);
-    html += `<div class="entry"><span class="date">${m}-${d}</span><span class="title"><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a>${extra.length ? `<div class="meta">${extra.join(" | ")}</div>` : ""}</span></div>`;
-  }
-  document.getElementById("list").innerHTML = html || "<p>No readings yet.</p>";
-}
-
-document.getElementById("yr").textContent = new Date().getFullYear();
-renderTags(); renderList();
-</script>
 </body>
 </html>
