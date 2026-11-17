@@ -2,8 +2,15 @@
 
 > Stanford researcher (SAIL) working on data and evals: agent evaluation, decision models, and representation learning for clinical data. Before Stanford, co-founded TATA Technology (a marketplace that matched 20,000+ families of autistic children with trained providers).
 
+## Community and Education
+
+Teaching College and High School Student Researchers from Stanford University.
+
+- [Teach AI One Fact. Can It Guess the Rest?](https://owenyliu.github.io/readings/latent-taxonomies/): A 2-minute read on Sobotka et al. (EPFL & AXA, arXiv:2610.15836) in Chinese and English posters. 一篇论文，让我们如何写更好的论文？ Markdown: https://owenyliu.github.io/readings/md/latent-taxonomies.md
+
 ## Readings (notes, agent-readable Markdown)
 
+- [Teach AI One Fact. Can It Guess the Rest?](https://owenyliu.github.io/readings/md/latent-taxonomies.md): Sobotka et al. on latent taxonomies — bigger AIs reason less at a fixed data budget.
 - [Language Agents: From Next-Token Prediction to Digital Automation](https://owenyliu.github.io/readings/md/language-agents.md): Reading notes on Shunyu Yao's Princeton PhD dissertation (May 2024, advisor Karthik Narasimhan): WebShop, InterCode, ReAct, Tree of Thoughts, and CoALA.
 - [SWE-chat: Tracing One Full Session](https://owenyliu.github.io/readings/md/swe-chat.md): A walk-through of real coding-agent sessions from the SWE-chat dataset — where the agent drifts, and what pushback looks like.
 - [Medical MythTriage: Can a Fast Decision Model Be Trusted to Pre-Screen Medical Claims?](https://owenyliu.github.io/readings/md/mythtriage.md): My CS329Z midway report: a fast model settles medical claims only when it is at least 95% precise — on HealthFC it is, on MEDFACT it is not.
