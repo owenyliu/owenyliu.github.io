@@ -1,2 +1,106 @@
-<!DOCTYPE html>
-<html><head><title>Community</title></head><body><h1>Community</h1><p>Placeholder — full Community page coming shortly.</p></body></html>
+<!doctype html>
+<html lang="en" data-ui-lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="icon" type="image/png" sizes="512x512" href="../favicon.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Community and Education — Owen Liu</title>
+<meta name="description" content="Community and Education for Teaching College and High School Student Researchers from Stanford University. Plain-language reads on real papers, in English and Chinese.">
+<script>
+  (function () { var l = 'en'; try { l = localStorage.getItem('community-lang') || 'en'; } catch (e) {} document.documentElement.setAttribute('data-ui-lang', l); })();
+</script>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #fff; color: #111; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.6; font-weight: 300; }
+  .page { max-width: 760px; margin: 0 auto; padding: 48px 20px 64px; }
+  h1 { font-size: 30px; font-weight: 400; margin: 0 0 18px; letter-spacing: .01em; line-height: 1.3; }
+  h2 { font-size: 20px; font-weight: 400; margin: 36px 0 10px; }
+  p { margin: 0 0 14px; }
+  a { color: #111; text-decoration: underline; text-underline-offset: 3px; }
+  a:hover { color: #666; }
+  .back { color: #555; margin-bottom: 26px; }
+  .kicker { color: #8C1515; font-weight: 500; letter-spacing: .02em; }
+  table { width: 100%; border-collapse: collapse; }
+  td { vertical-align: top; padding: 5px 0; font-weight: 300; }
+  td.date { width: 70px; white-space: nowrap; padding-right: 16px; }
+  td .extra { color: #555; }
+  td .extra a { color: #555; }
+  .lang-toggle { color: #555; margin: 0 0 22px; }
+  .lang-toggle button { font: inherit; background: none; border: none; padding: 0 2px; cursor: pointer; color: #555; text-decoration: underline; text-underline-offset: 3px; }
+  .lang-toggle button.active { color: #111; font-weight: 500; text-decoration: none; cursor: default; }
+  html[data-ui-lang="en"] .lang-zh { display: none; }
+  html[data-ui-lang="zh"] .lang-en { display: none; }
+</style>
+</head>
+<body>
+<div class="page">
+<p class="back">&larr; <a href="../">Owen Liu</a></p>
+<p class="lang-toggle">Language: <button type="button" id="btn-en" onclick="setLang('en')">English</button> &middot; <button type="button" id="btn-zh" onclick="setLang('zh')">中文</button></p>
+
+<p class="kicker">Community and Education for Teaching College and High School Student Researchers from Stanford University</p>
+<h1><span class="lang-en">Community and Education</span><span class="lang-zh">社区与教育</span></h1>
+
+<p class="lang-en">Plain-language reads on real papers, made for college and high school student researchers. One paper at a time — and what each paper teaches us about doing good research. <b>One paper, and how it teaches us to write better papers.</b></p>
+<p class="lang-zh">为大学生和高中生科研新手写的论文导读：用大白话讲清真正的论文。一篇论文，让我们如何写更好的论文？</p>
+
+<h2><span class="lang-en">Paper notes</span><span class="lang-zh">论文笔记</span></h2>
+<table>
+    <tr><td class="date">11-16</td><td><a href="../readings/latent-taxonomies/"><b>Teach AI One Fact. Can It Guess the Rest? — AI 学会一件事，能推到同类吗？</b></a><br>
+    <span class="extra lang-en">A 2-minute read on Sobotka et al. (EPFL &amp; AXA, ICLR 2027 top-scored, arXiv:2610.15836). Good research = a clear question + a test where you know the answer + ruling out other explanations.</span>
+    <span class="extra lang-zh">2 分钟读懂 Sobotka 等人的论文（EPFL 与 AXA，ICLR 2027 最高分之一，arXiv:2610.15836）。好的研究 = 一个清楚的问题 + 一个你知道答案的测试 + 排除其他解释。</span><br>
+    <span class="extra"><a href="../readings/latent-taxonomies/poster-zh.png">中文海报</a> &middot; <a href="../readings/latent-taxonomies/poster-en.png">English poster</a> &middot; <a href="../readings/md/latent-taxonomies.md">Markdown</a></span></td></tr>
+
+    <tr><td class="date">11-15</td><td><a href="../readings/language-agents/"><b>Language Agents: From Next-Token Prediction to Digital Automation</b></a><br>
+    <span class="extra lang-en">Reading notes on Shunyu Yao's Princeton PhD dissertation (May 2024, advisor Karthik Narasimhan): WebShop, InterCode, ReAct, Tree of Thoughts, and CoALA — what a language agent is, and why it needs more than a language model.</span>
+    <span class="extra lang-zh">姚顺雨普林斯顿博士论文（2024 年 5 月，导师 Karthik Narasimhan）阅读笔记：WebShop、InterCode、ReAct、思维树与 CoALA——语言智能体是什么，为什么它不只是一个语言模型。</span><br>
+    <span class="extra"><a href="../readings/md/language-agents.md">Markdown</a></span></td></tr>
+
+    <tr><td class="date">11-13</td><td><a href="../readings/swe-chat/"><b>SWE-chat: Tracing One Full Session</b></a><br>
+    <span class="extra lang-en">A walk-through of real coding-agent sessions from the SWE-chat dataset — where the agent drifts, and what pushback looks like.</span>
+    <span class="extra lang-zh">走进 SWE-chat 数据集里真实的编程智能体会话——看它在哪里跑偏，用户又如何把它推回去。</span><br>
+    <span class="extra"><a href="../readings/swe-chat/slides.pdf">Slides</a> &middot; <a href="../readings/swe-chat/video.mp4">Video</a> &middot; <a href="../readings/md/swe-chat.md">Markdown</a></span></td></tr>
+
+    <tr><td class="date">11-09</td><td><a href="../readings/ricursive/"><b>Ricursive Intelligence: A Research Pack (and a Name Trap)</b></a><br>
+    <span class="extra lang-en">Notes on Anna Goldie and Azalia Mirhoseini’s AI chip-design company — and why it is not Richard Socher’s Recursive Superintelligence.</span>
+    <span class="extra lang-zh">Anna Goldie 与 Azalia Mirhoseini 的 AI 芯片设计公司研究笔记——以及它为什么不是 Richard Socher 的 Recursive Superintelligence（名字陷阱）。</span><br>
+    <span class="extra"><a href="../readings/ricursive/slides.pdf">Slides</a> &middot; <a href="../readings/ricursive/video.mp4">Video</a> &middot; <a href="../readings/md/ricursive.md">Markdown</a></span></td></tr>
+
+    <tr><td class="date">11-07</td><td><a href="../readings/mythtriage/"><b>Medical MythTriage: Can a Fast Decision Model Be Trusted to Pre-Screen Medical Claims?</b></a><br>
+    <span class="extra lang-en">My CS329Z midway report: a fast model settles medical claims only when it is at least 95% precise — on HealthFC it is, on MEDFACT it is not.</span>
+    <span class="extra lang-zh">我的 CS329Z 期中报告：快速模型只有在精确率至少 95% 时才能单独裁决医疗说法——在 HealthFC 上可以，在 MEDFACT 上不行。</span><br>
+    <span class="extra"><a href="../readings/mythtriage/slides.pdf">Slides</a> &middot; <a href="../readings/mythtriage/video.mp4">Video</a> &middot; <a href="../readings/md/mythtriage.md">Markdown</a></span></td></tr>
+
+    <tr><td class="date">10-31</td><td><a href="../readings/cs197-findings/"><b>Evaluating Numerical Preprocessing for Tabular Representation Learning — Findings</b></a><br>
+    <span class="extra lang-en">CS197 Project 3 findings (with Max Lee and Rita Xiang): the standardized baseline is genuinely good, and prediction and fidelity dissociate.</span>
+    <span class="extra lang-zh">CS197 项目 3 结论（与 Max Lee、Rita Xiang 合作）：标准化基线确实很强，而预测精度与表征保真度并不一致。</span><br>
+    <span class="extra"><a href="../readings/cs197-findings/slides.pdf">Slides</a> &middot; <a href="../readings/cs197-findings/video.mp4">Video</a> &middot; <a href="../readings/md/cs197-findings.md">Markdown</a></span></td></tr>
+
+    <tr><td class="date">10-14</td><td><a href="../readings/calibration-benchmark/"><b>Calibration Benchmark — Reading Notes</b></a><br>
+    <span class="extra lang-en">What would a good benchmark for agent calibration look like? Non-toy tasks, memory, and confidence that matches reality.</span>
+    <span class="extra lang-zh">一个好的智能体校准基准应该长什么样？非玩具任务、记忆，以及与现实相符的置信度。</span><br>
+    <span class="extra"><a href="../readings/calibration-benchmark/slides.pdf">Slides</a> &middot; <a href="../readings/calibration-benchmark/video.mp4">Video</a> &middot; <a href="../readings/md/calibration-benchmark.md">Markdown</a></span></td></tr>
+
+    <tr><td class="date">10-09</td><td><a href="../readings/colm-2026/"><b>COLM 2026 Workshop Papers, Explained</b></a><br>
+    <span class="extra lang-en">Plain-English explainers of 11 Stanford and 4 Berkeley papers from the COLM 2026 workshops.</span>
+    <span class="extra lang-zh">COLM 2026 研讨会 15 篇论文的大白话讲解：Stanford 11 篇、Berkeley 4 篇。</span><br>
+    <span class="extra"><a href="../readings/colm-2026/slides.pdf">Slides</a> &middot; <a href="../readings/colm-2026/video.mp4">Video</a> &middot; <a href="../readings/md/colm-2026.md">Markdown</a></span></td></tr>
+</table>
+
+<!-- READING LOG: the Nov 16, 2026 reading list (44 papers) goes here once Owen confirms the source list. Do not publish an empty section. -->
+
+<p><span class="lang-en">Notes · Owen Liu</span><span class="lang-zh">笔记 · Owen Liu</span> <a href="https://x.com/Stanford_Owen_L">@Stanford_Owen_L</a></p>
+</div>
+<script>
+  function setLang(l) {
+    document.documentElement.setAttribute('data-ui-lang', l);
+    document.documentElement.setAttribute('lang', l === 'zh' ? 'zh-CN' : 'en');
+    try { localStorage.setItem('community-lang', l); } catch (e) {}
+    document.getElementById('btn-en').classList.toggle('active', l === 'en');
+    document.getElementById('btn-zh').classList.toggle('active', l === 'zh');
+  }
+  setLang(document.documentElement.getAttribute('data-ui-lang') || 'en');
+</script>
+</body>
+</html>
