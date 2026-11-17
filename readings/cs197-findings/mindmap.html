@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en" data-ui-lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<link rel="icon" type="image/png" sizes="512x512" href="../../favicon.png">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CS197 Project 3, Explained — Mind Map · Owen Liu</title>
+<meta name="description" content="CS197 Project 3 in one mind map, for high school and college student researchers: does prepping numbers change what an AI learns from a table? In English and Chinese.">
+<script>
+  (function () { var l = 'en'; try { l = localStorage.getItem('community-lang') || 'en'; } catch (e) {} document.documentElement.setAttribute('data-ui-lang', l); })();
+</script>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #fff; color: #111; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.6; font-weight: 300; }
+  .page { max-width: 1100px; margin: 0 auto; padding: 48px 20px 64px; }
+  h1 { font-size: 30px; font-weight: 400; margin: 0 0 18px; letter-spacing: .01em; line-height: 1.3; }
+  h2 { font-size: 20px; font-weight: 400; margin: 36px 0 10px; }
+  p { margin: 0 0 14px; }
+  a { color: #111; text-decoration: underline; text-underline-offset: 3px; }
+  a:hover { color: #666; }
+  .back { color: #555; margin-bottom: 26px; }
+  .kicker { color: #8C1515; font-weight: 500; letter-spacing: .02em; }
+  .lang-toggle { color: #555; margin: 0 0 22px; }
+  .lang-toggle button { font: inherit; background: none; border: none; padding: 0 2px; cursor: pointer; color: #555; text-decoration: underline; text-underline-offset: 3px; }
+  .lang-toggle button.active { color: #111; font-weight: 500; text-decoration: none; cursor: default; }
+  html[data-ui-lang="en"] .lang-zh { display: none; }
+  html[data-ui-lang="zh"] .lang-en { display: none; }
+  .walk { max-width: 760px; }
+</style>
+</head>
+<body>
+<div class="page">
+<p class="back">&larr; <a href="./">CS197 Findings note</a> &middot; <a href="../../community/">Community and Education</a> &middot; <a href="../../">Owen Liu</a></p>
+<p class="lang-toggle">Language: <button type="button" id="btn-en" onclick="setLang('en')">English</button> &middot; <button type="button" id="btn-zh" onclick="setLang('zh')">中文</button></p>
+
+<p class="kicker">Community and Education for Teaching College and High School Student Researchers from Stanford University</p>
+<h1><span class="lang-en">CS197 Project 3, in One Map</span><span class="lang-zh">一张图看懂 CS197 项目 3</span></h1>
+<p class="lang-en">Evaluating Numerical Preprocessing for Tabular Representation Learning — Max Lee, Owen Liu, Rita Xiang. A Stanford research project, explained for student researchers in the US and China.</p>
+<p class="lang-zh">《表格表示学习中的数值预处理评估》——Max Lee、Owen Liu、Rita Xiang。一个 Stanford 研究项目，为美国和中国的高中生、大学生科研新手而讲。</p>
+
+<div class="lang-en">
+<svg viewBox="0 0 1280 1070" style="width:100%;height:auto;display:block" role="img" aria-label="CS197 mind map">
+<rect x="0" y="0" width="1280" height="1070" fill="#fdfcfa"/>
+<path d="M 228 540 C 262 540, 262 95, 292 95" fill="none" stroke="#8C1515" stroke-width="2"/>
+<path d="M 228 540 C 262 540, 262 271, 292 271" fill="none" stroke="#0E7C66" stroke-width="2"/>
+<path d="M 228 540 C 262 540, 262 447, 292 447" fill="none" stroke="#2563EB" stroke-width="2"/>
+<path d="M 228 540 C 262 540, 262 623, 292 623" fill="none" stroke="#7C3AED" stroke-width="2"/>
+<path d="M 228 540 C 262 540, 262 799, 292 799" fill="none" stroke="#B45309" stroke-width="2"/>
+<path d="M 228 540 C 262 540, 262 975, 292 975" fill="none" stroke="#4B5563" stroke-width="2"/>
+<rect x="14" y="475" width="214" height="130" rx="14" fill="#1a1a2e"/>
+<text x="121" y="522" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="27" font-weight="bold" fill="#fff" text-anchor="middle">CS197</text>
+<text x="121" y="546" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="15" fill="#cfcfe0" text-anchor="middle">Project 3</text>
+<text x="121" y="572" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13.5" fill="#fff" text-anchor="middle">Does prepping numbers</text>
+<text x="121" y="591" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13.5" fill="#fff" text-anchor="middle">change what AI learns?</text>
+<path d="M 522 95 C 544 95, 544 35, 566 35" fill="none" stroke="#8C1515" stroke-width="1.5"/>
+<path d="M 522 95 C 544 95, 544 95, 566 95" fill="none" stroke="#8C1515" stroke-width="1.5"/>
+<path d="M 522 95 C 544 95, 544 155, 566 155" fill="none" stroke="#8C1515" stroke-width="1.5"/>
+<rect x="292" y="67" width="230" height="56" rx="12" fill="#f9ecec" stroke="#8C1515" stroke-width="2"/>
+<text x="407" y="93" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="16.5" font-weight="bold" fill="#8C1515" text-anchor="middle">🔬 The Question</text>
+<text x="407" y="113" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12.5" fill="#555" text-anchor="middle">问题是什么</text>
+<rect x="566" y="9" width="700" height="52" rx="10" fill="#ffffff" stroke="#8C1515" stroke-width="1.5"/>
+<rect x="566" y="9" width="7" height="52" fill="#8C1515"/>
+<text x="588" y="31" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="15.5" font-weight="bold" fill="#111">A hospital table: 1,722 patients, 20 numbers each</text>
+<text x="588" y="52" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" fill="#444">blood tests, oxygen… and who died within 48 hours (about 3 in 100)</text>
+<rect x="566" y="69" width="700" height="52" rx="10" fill="#ffffff" stroke="#8C1515" stroke-width="1.5"/>
+<rect x="566" y="69" width="7" height="52" fill="#8C1515"/>
+<text x="588" y="91" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="15.5" font-weight="bold" fill="#111">A VAE = a note-taker AI</text>
+<text x="588" y="112" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" fill="#444">it squeezes the table into an 8-number note, then redraws the table from the note</text>
+<rect x="566" y="129" width="700" height="52" rx="10" fill="#ffffff" stroke="#8C1515" stroke-width="1.5"/>
+<rect x="566" y="129" width="7" height="52" fill="#8C1515"/>
+<text x="588" y="151" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="15.5" font-weight="bold" fill="#111">Change ONLY the number prep</text>
+<text x="588" y="172" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" fill="#444">raw, rescaled, sorted into bins… does the note get better?</text>
+<path d="M 522 271 C 544 271, 544 240, 566 240" fill="none" stroke="#0E7C66" stroke-width="1.5"/>
+<path d="M 522 271 C 544 271, 544 302, 566 302" fill="none" stroke="#0E7C66" stroke-width="1.5"/>
+<rect x="292" y="243" width="230" height="56" rx="12" fill="#e8f4f1" stroke="#0E7C66" stroke-width="2"/>
+<text x="407" y="269" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="16.5" font-weight="bold" fill="#0E7C66" text-anchor="middle">🧪 The Contest</text>
+<text x="407" y="289" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12.5" fill="#555" text-anchor="middle">怎么比才公平</text>
+<rect x="566" y="214" width="700" height="52" rx="10" fill="#ffffff" stroke="#0E7C66" stroke-width="1.5"/>
+<rect x="566" y="214" width="7" height="52" fill="#0E7C66"/>
+<text x="588" y="236" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="15.5" font-weight="bold" fill="#111">9 prep recipes, 36 runs</text>
+<text x="588" y="257" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" fill="#444">every AI the same size (≈14,700 parts), each recipe tried 3 times</text>
+<rect x="566" y="276" width="700" height="52" rx="10" fill="#ffffff" stroke="#0E7C66" stroke-width="1.5"/>
+<rect x="566" y="276" width="7" height="52" fill="#0E7C66"/>
+<text x="588" y="298" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="15.5" font-weight="bold" fill="#111">Three report cards</text>
+<text x="588" y="319" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" fill="#444">Predict · Rebuild the table · Keep the distances</text>
+<path d="M 522 447 C 544 447, 544 416, 566 416" fill="none" stroke="#2563EB" stroke-width="1.5"/>
+<path d="M 522 447 C 544 447, 544 478, 566 478" fill="none" stroke="#2563EB" stroke-width="1.5"/>
+<rect x="292" y="419" width="230" height="56" rx="12" fill="#eaf0fe" stroke="#2563EB" stroke-width="2"/>
+<text x="407" y="445" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="16.5" font-weight="bold" fill="#2563EB" text-anchor="middle">🏆 The Plain Recipe Wins</text>
+<text x="407" y="465" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12.5" fill="#555" text-anchor="middle">最朴素的赢了</text>
+<rect x="566" y="390" width="700" height="52" rx="10" fill="#ffffff" stroke="#2563EB" stroke-width="1.5"/>
+<rect x="566" y="390" width="7" height="52" fill="#2563EB"/>
+<text x="588" y="412" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="15.5" font-weight="bold" fill="#111">Standard scaling takes gold</text>
+<text x="588" y="433" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" fill="#444">best Rebuild (0.65) · best Distances (0.89)</text>
+<rect x="566" y="452" width="700" height="52" rx="10" fill="#ffffff" stroke="#2563EB" stroke-width="1.5"/>
+<rect x="566" y="452" width="7" height="52" fill="#2563EB"/>
+<text x="588" y="474" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="15.5" font-weight="bold" fill="#111">No fancy recipe beat it overall</text>
+<text x="588" y="495" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" fill="#444">prep moves single scores — not overall quality</text>
+<path d="M 522 623 C 544 623, 544 592, 566 592" fill="none" stroke="#7C3AED" stroke-width="1.5"/>
+<path d="M 522 623 C 544 623, 544 654, 566 654" fill="none" stroke="#7C3AED" stroke-width="1.5"/>
+<rect x="292" y="595" width="230" height="56" rx="12" fill="#f1eafd" stroke="#7C3AED" stroke-width="2"/>
+<text x="407" y="621" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="16.5" font-weight="bold" fill="#7C3AED" text-anchor="middle">😲 Surprise: Scores Disagree</text>
+<text x="407" y="641" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12.5" fill="#555" text-anchor="middle">意外：分数打架</text>
+<rect x="566" y="566" width="700" height="52" rx="10" fill="#ffffff" stroke="#7C3AED" stroke-width="1.5"/>
+<rect x="566" y="566" width="7" height="52" fill="#7C3AED"/>
+<text x="588" y="588" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="15.5" font-weight="bold" fill="#111">Worst memory, best detective</text>
+<text x="588" y="609" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" fill="#444">one recipe forgets the table (0.23) yet spots the rare deaths 2× better</text>
+<rect x="566" y="628" width="700" height="52" rx="10" fill="#ffffff" stroke="#7C3AED" stroke-width="1.5"/>
+<rect x="566" y="628" width="7" height="52" fill="#7C3AED"/>
+<text x="588" y="650" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="15.5" font-weight="bold" fill="#111">Binning makes the notes go blank</text>
+<text x="588" y="671" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" fill="#444">cut numbers into bins → Rebuild 0.05, Predict = a coin flip; bins help other AIs, not this one</text>
+<path d="M 522 799 C 544 799, 544 768, 566 768" fill="none" stroke="#B45309" stroke-width="1.5"/>
+<path d="M 522 799 C 544 799, 544 830, 566 830" fill="none" stroke="#B45309" stroke-width="1.5"/>
+<rect x="292" y="771" width="230" height="56" rx="12" fill="#fdf3e3" stroke="#B45309" stroke-width="2"/>
+<text x="407" y="797" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="16.5" font-weight="bold" fill="#B45309" text-anchor="middle">🌡️ Textbook Ideas, Checked</text>
+<text x="407" y="817" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12.5" fill="#555" text-anchor="middle">课本直觉，验一验</text>
+<rect x="566" y="742" width="700" height="52" rx="10" fill="#ffffff" stroke="#B45309" stroke-width="1.5"/>
+<rect x="566" y="742" width="7" height="52" fill="#B45309"/>
+<text x="588" y="764" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="15.5" font-weight="bold" fill="#111">Only the wildest number needed rescue</text>
+<text x="588" y="785" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" fill="#444">white blood cells: plain prep fails (−0.05), rank prep saves it (0.34); the other tests were fine</text>
+<rect x="566" y="804" width="700" height="52" rx="10" fill="#ffffff" stroke="#B45309" stroke-width="1.5"/>
+<rect x="566" y="804" width="7" height="52" fill="#B45309"/>
+<text x="588" y="826" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="15.5" font-weight="bold" fill="#111">“Trapped between 0 and 100” needed nothing special</text>
+<text x="588" y="847" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" fill="#444">oxygen saturation: plain recipes best, the “special” ones worst</text>
+<path d="M 522 975 C 544 975, 544 944, 566 944" fill="none" stroke="#4B5563" stroke-width="1.5"/>
+<path d="M 522 975 C 544 975, 544 1006, 566 1006" fill="none" stroke="#4B5563" stroke-width="1.5"/>
+<rect x="292" y="947" width="230" height="56" rx="12" fill="#f1f1ee" stroke="#4B5563" stroke-width="2"/>
+<text x="407" y="973" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="16.5" font-weight="bold" fill="#4B5563" text-anchor="middle">📏 Fine Print + Your Turn</text>
+<text x="407" y="993" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12.5" fill="#555" text-anchor="middle">诚实小字 + 给你的启发</text>
+<rect x="566" y="918" width="700" height="52" rx="10" fill="#ffffff" stroke="#4B5563" stroke-width="1.5"/>
+<rect x="566" y="918" width="7" height="52" fill="#4B5563"/>
+<text x="588" y="940" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="15.5" font-weight="bold" fill="#111">Honest fine print</text>
+<text x="588" y="961" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" fill="#444">demo data: only 11 deaths in the test — today's wins are hints, not proof; a full-data rematch is coming</text>
+<rect x="566" y="980" width="700" height="52" rx="10" fill="#ffffff" stroke="#4B5563" stroke-width="1.5"/>
+<rect x="566" y="980" width="7" height="52" fill="#4B5563"/>
+<text x="588" y="1002" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="15.5" font-weight="bold" fill="#111">Steal this for your own research</text>
+<text x="588" y="1023" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" fill="#444">change one thing at a time · freeze the rules first · check more than one score · report the boring winner</text>
+</svg>
+</div>
+<div class="lang-zh">
+<svg viewBox="0 0 1280 1070" style="width:100%;height:auto;display:block" role="img" aria-label="CS197 mind map">
+<rect x="0" y="0" width="1280" height="1070" fill="#fdfcfa"/>
+<path d="M 228 540 C 262 540, 262 95, 292 95" fill="none" stroke="#8C1515" stroke-width="2"/>
+<path d="M 228 540 C 262 540, 262 271, 292 271" fill="none" stroke="#0E7C66" stroke-width="2"/>
+<path d="M 228 540 C 262 540, 262 447, 292 447" fill="none" stroke="#2563EB" stroke-width="2"/>
+<path d="M 228 540 C 262 540, 262 623, 292 623" fill="none" stroke="#7C3AED" stroke-width="2"/>
+<path d="M 228 540 C 262 540, 262 799, 292 799" fill="none" stroke="#B45309" stroke-width="2"/>
+<path d="M 228 540 C 262 540, 262 975, 292 975" fill="none" stroke="#4B5563" stroke-width="2"/>
+<rect x="14" y="475" width="214" height="130" rx="14" fill="#1a1a2e"/>
+<text x="121" y="522" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="27" font-weight="bold" fill="#fff" text-anchor="middle">CS197</text>
+<text x="121" y="546" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="15" fill="#cfcfe0" text-anchor="middle">项目 3</text>
+<text x="121" y="572" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13.5" fill="#fff" text-anchor="middle">数字先怎么处理，</text>
+<text x="121" y="591" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13.5" fill="#fff" text-anchor="middle">会改变 AI 学到的东西吗？</text>
+<path d="M 522 95 C 544 95, 544 35, 566 35" fill="none" stroke="#8C1515" stroke-width="1.5"/>
+<path d="M 522 95 C 544 95, 544 95, 566 95" fill="none" stroke="#8C1515" stroke-width="1.5"/>
+<path d="M 522 95 C 544 95, 544 155, 566 155" fill="none" stroke="#8C1515" stroke-width="1.5"/>
+<rect x="292" y="67" width="230" height="56" rx="12" fill="#f9ecec" stroke="#8C1515" stroke-width="2"/>
+<text x="407" y="93" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="16.5" font-weight="bold" fill="#8C1515" text-anchor="middle">🔬 问题是什么</text>
+<text x="407" y="113" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12.5" fill="#555" text-anchor="middle">The Question</text>
+<rect x="566" y="9" width="700" height="52" rx="10" fill="#ffffff" stroke="#8C1515" stroke-width="1.5"/>
+<rect x="566" y="9" width="7" height="52" fill="#8C1515"/>
+<text x="588" y="31" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="15.5" font-weight="bold" fill="#111">一张医院表格：1,722 位病人，每人 20 个数字</text>
+<text x="588" y="52" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" fill="#444">验血、血氧……还有谁在 48 小时内去世（100 人里约 3 人）</text>
+<rect x="566" y="69" width="700" height="52" rx="10" fill="#ffffff" stroke="#8C1515" stroke-width="1.5"/>
+<rect x="566" y="69" width="7" height="52" fill="#8C1515"/>
+<text x="588" y="91" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="15.5" font-weight="bold" fill="#111">VAE = 一个做笔记的 AI</text>
+<text x="588" y="112" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" fill="#444">把整张表格挤成 8 个数字的笔记，再凭笔记把表格画回来</text>
+<rect x="566" y="129" width="700" height="52" rx="10" fill="#ffffff" stroke="#8C1515" stroke-width="1.5"/>
+<rect x="566" y="129" width="7" height="52" fill="#8C1515"/>
+<text x="588" y="151" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="15.5" font-weight="bold" fill="#111">只改一件事：数字的预处理</text>
+<text x="588" y="172" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" fill="#444">原样、换一把尺子、切成箱子……笔记会变好吗？</text>
+<path d="M 522 271 C 544 271, 544 240, 566 240" fill="none" stroke="#0E7C66" stroke-width="1.5"/>
+<path d="M 522 271 C 544 271, 544 302, 566 302" fill="none" stroke="#0E7C66" stroke-width="1.5"/>
+<rect x="292" y="243" width="230" height="56" rx="12" fill="#e8f4f1" stroke="#0E7C66" stroke-width="2"/>
+<text x="407" y="269" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="16.5" font-weight="bold" fill="#0E7C66" text-anchor="middle">🧪 怎么比才公平</text>
+<text x="407" y="289" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12.5" fill="#555" text-anchor="middle">The Contest</text>
+<rect x="566" y="214" width="700" height="52" rx="10" fill="#ffffff" stroke="#0E7C66" stroke-width="1.5"/>
+<rect x="566" y="214" width="7" height="52" fill="#0E7C66"/>
+<text x="588" y="236" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="15.5" font-weight="bold" fill="#111">9 种预处理配方，36 场比赛</text>
+<text x="588" y="257" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" fill="#444">每个 AI 一样大（约 14,700 个零件），每种配方跑 3 次</text>
+<rect x="566" y="276" width="700" height="52" rx="10" fill="#ffffff" stroke="#0E7C66" stroke-width="1.5"/>
+<rect x="566" y="276" width="7" height="52" fill="#0E7C66"/>
+<text x="588" y="298" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="15.5" font-weight="bold" fill="#111">三张成绩单</text>
+<text x="588" y="319" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" fill="#444">预测 · 还原表格 · 保持距离</text>
+<path d="M 522 447 C 544 447, 544 416, 566 416" fill="none" stroke="#2563EB" stroke-width="1.5"/>
+<path d="M 522 447 C 544 447, 544 478, 566 478" fill="none" stroke="#2563EB" stroke-width="1.5"/>
+<rect x="292" y="419" width="230" height="56" rx="12" fill="#eaf0fe" stroke="#2563EB" stroke-width="2"/>
+<text x="407" y="445" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="16.5" font-weight="bold" fill="#2563EB" text-anchor="middle">🏆 最朴素的赢了</text>
+<text x="407" y="465" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12.5" fill="#555" text-anchor="middle">The Plain Recipe Wins</text>
+<rect x="566" y="390" width="700" height="52" rx="10" fill="#ffffff" stroke="#2563EB" stroke-width="1.5"/>
+<rect x="566" y="390" width="7" height="52" fill="#2563EB"/>
+<text x="588" y="412" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="15.5" font-weight="bold" fill="#111">标准化拿金牌</text>
+<text x="588" y="433" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" fill="#444">还原第一（0.65）· 距离第一（0.89）</text>
+<rect x="566" y="452" width="700" height="52" rx="10" fill="#ffffff" stroke="#2563EB" stroke-width="1.5"/>
+<rect x="566" y="452" width="7" height="52" fill="#2563EB"/>
+<text x="588" y="474" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="15.5" font-weight="bold" fill="#111">没有花哨配方全面超过它</text>
+<text x="588" y="495" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" fill="#444">预处理改变的是单个分数，不是整体质量</text>
+<path d="M 522 623 C 544 623, 544 592, 566 592" fill="none" stroke="#7C3AED" stroke-width="1.5"/>
+<path d="M 522 623 C 544 623, 544 654, 566 654" fill="none" stroke="#7C3AED" stroke-width="1.5"/>
+<rect x="292" y="595" width="230" height="56" rx="12" fill="#f1eafd" stroke="#7C3AED" stroke-width="2"/>
+<text x="407" y="621" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="16.5" font-weight="bold" fill="#7C3AED" text-anchor="middle">😲 意外：分数打架</text>
+<text x="407" y="641" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12.5" fill="#555" text-anchor="middle">Surprise: Scores Disagree</text>
+<rect x="566" y="566" width="700" height="52" rx="10" fill="#ffffff" stroke="#7C3AED" stroke-width="1.5"/>
+<rect x="566" y="566" width="7" height="52" fill="#7C3AED"/>
+<text x="588" y="588" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="15.5" font-weight="bold" fill="#111">记性最差，破案最强</text>
+<text x="588" y="609" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" fill="#444">一种配方几乎忘光表格（0.23），却把罕见的死亡排得准 2 倍</text>
+<rect x="566" y="628" width="700" height="52" rx="10" fill="#ffffff" stroke="#7C3AED" stroke-width="1.5"/>
+<rect x="566" y="628" width="7" height="52" fill="#7C3AED"/>
+<text x="588" y="650" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="15.5" font-weight="bold" fill="#111">分箱让笔记变白纸</text>
+<text x="588" y="671" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" fill="#444">把数字切成箱子 → 还原 0.05、预测等于抛硬币；分箱对别的 AI 有用，对这个不行</text>
+<path d="M 522 799 C 544 799, 544 768, 566 768" fill="none" stroke="#B45309" stroke-width="1.5"/>
+<path d="M 522 799 C 544 799, 544 830, 566 830" fill="none" stroke="#B45309" stroke-width="1.5"/>
+<rect x="292" y="771" width="230" height="56" rx="12" fill="#fdf3e3" stroke="#B45309" stroke-width="2"/>
+<text x="407" y="797" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="16.5" font-weight="bold" fill="#B45309" text-anchor="middle">🌡️ 课本直觉，验一验</text>
+<text x="407" y="817" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12.5" fill="#555" text-anchor="middle">Textbook Ideas, Checked</text>
+<rect x="566" y="742" width="700" height="52" rx="10" fill="#ffffff" stroke="#B45309" stroke-width="1.5"/>
+<rect x="566" y="742" width="7" height="52" fill="#B45309"/>
+<text x="588" y="764" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="15.5" font-weight="bold" fill="#111">只有最野的数字需要抢救</text>
+<text x="588" y="785" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" fill="#444">白细胞太偏：朴素处理失败（−0.05），按排名处理救回（0.34）；其他验血指标原样就好</text>
+<rect x="566" y="804" width="700" height="52" rx="10" fill="#ffffff" stroke="#B45309" stroke-width="1.5"/>
+<rect x="566" y="804" width="7" height="52" fill="#B45309"/>
+<text x="588" y="826" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="15.5" font-weight="bold" fill="#111">“被关在 0–100 之间”不需要特殊照顾</text>
+<text x="588" y="847" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" fill="#444">血氧饱和度：朴素配方最好，“专门”配方最差</text>
+<path d="M 522 975 C 544 975, 544 944, 566 944" fill="none" stroke="#4B5563" stroke-width="1.5"/>
+<path d="M 522 975 C 544 975, 544 1006, 566 1006" fill="none" stroke="#4B5563" stroke-width="1.5"/>
+<rect x="292" y="947" width="230" height="56" rx="12" fill="#f1f1ee" stroke="#4B5563" stroke-width="2"/>
+<text x="407" y="973" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="16.5" font-weight="bold" fill="#4B5563" text-anchor="middle">📏 诚实小字 + 给你的启发</text>
+<text x="407" y="993" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12.5" fill="#555" text-anchor="middle">Fine Print + Your Turn</text>
+<rect x="566" y="918" width="700" height="52" rx="10" fill="#ffffff" stroke="#4B5563" stroke-width="1.5"/>
+<rect x="566" y="918" width="7" height="52" fill="#4B5563"/>
+<text x="588" y="940" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="15.5" font-weight="bold" fill="#111">诚实的小字</text>
+<text x="588" y="961" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" fill="#444">演示数据：测试里只有 11 例死亡——现在的赢只是线索，不是定论；完整数据还要重赛</text>
+<rect x="566" y="980" width="700" height="52" rx="10" fill="#ffffff" stroke="#4B5563" stroke-width="1.5"/>
+<rect x="566" y="980" width="7" height="52" fill="#4B5563"/>
+<text x="588" y="1002" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="15.5" font-weight="bold" fill="#111">把这套带回你自己的研究</text>
+<text x="588" y="1023" font-family="Helvetica Neue, Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" fill="#444">一次只改一件事 · 先定死规则 · 多看几张成绩单 · 老实报告无聊的赢家</text>
+</svg>
+</div>
+
+<div class="walk">
+<h2><span class="lang-en">How to read this map</span><span class="lang-zh">这张图怎么读</span></h2>
+<p class="lang-en">Think of the AI (a VAE) as a student who may copy a hospital chart onto a tiny sticky note — only 8 numbers allowed — and later has to redraw the whole chart from that note. Our project changed just one thing: how the numbers were handed to the student. Raw? Rescaled so every column uses the same ruler? Chopped into bins? Then we graded the notes three ways: can they predict who is in danger, can they rebuild the chart, and do patients who were close in the chart stay close in the note?</p>
+<p class="lang-zh">把这个 AI（一个叫 VAE 的模型）想象成一个学生：他只能把一张医院病历抄到一张小小的便利贴上——只许写 8 个数字——之后还要凭这张便利贴把整张病历画回来。我们的项目只改一件事：数字是以什么形式交到他手里的。原样？先换成同一把尺子？切成一段一段的箱子？然后我们用三种方式给笔记打分：能不能预测谁有危险、能不能还原病历、原来在病历里相近的病人，在笔记里是不是还相近。</p>
+<p class="lang-en">The headline is humbling: the plainest prep — standard scaling, the first recipe in every textbook — won. And the deepest lesson is the disagreement: a note can be terrible at remembering the chart and still be the best at spotting the rare patient who will die. Before you ask “is this AI good?”, ask “good at which score?”</p>
+<p class="lang-zh">结论有点反直觉：最朴素的预处理——标准化，课本里的第一招——赢了。而更深的一课是那场“分数打架”：一张笔记可以完全记不住病历，却最擅长找出那位罕见的、会去世的病人。所以在问“这个 AI 好不好”之前，先问一句：“在哪个分数上好？”</p>
+<p class="lang-en">Full findings, with every number: <a href="./">the CS197 findings note</a> · <a href="../md/cs197-findings.md">Markdown version</a></p>
+<p class="lang-zh">完整结论和全部数字：<a href="./">CS197 研究发现笔记</a> · <a href="../md/cs197-findings.md">Markdown 版</a></p>
+</div>
+</div>
+<script>
+  function setLang(l) {
+    document.documentElement.setAttribute('data-ui-lang', l);
+    document.documentElement.setAttribute('lang', l === 'zh' ? 'zh-CN' : 'en');
+    try { localStorage.setItem('community-lang', l); } catch (e) {}
+    document.getElementById('btn-en').classList.toggle('active', l === 'en');
+    document.getElementById('btn-zh').classList.toggle('active', l === 'zh');
+  }
+  setLang(document.documentElement.getAttribute('data-ui-lang') || 'en');
+</script>
+</body>
+</html>
