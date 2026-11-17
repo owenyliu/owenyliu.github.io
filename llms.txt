@@ -6,6 +6,7 @@
 
 Teaching College and High School Student Researchers from Stanford University.
 
+- [Community and Education — all paper notes, English / 中文](https://owenyliu.github.io/community/): Plain-language reads on real papers for college and high school student researchers, with an English/Chinese toggle.
 - [Teach AI One Fact. Can It Guess the Rest?](https://owenyliu.github.io/readings/latent-taxonomies/): A 2-minute read on Sobotka et al. (EPFL & AXA, arXiv:2610.15836) in Chinese and English posters. 一篇论文，让我们如何写更好的论文？ Markdown: https://owenyliu.github.io/readings/md/latent-taxonomies.md
 
 ## Readings (notes, agent-readable Markdown)
@@ -22,5 +23,6 @@ Teaching College and High School Student Researchers from Stanford University.
 ## Pages
 
 - [Homepage](https://owenyliu.github.io/)
+- [Community and Education](https://owenyliu.github.io/community/)
 - [Readings index](https://owenyliu.github.io/readings/)
 - [Medical MythTriage project](https://owenyliu.github.io/mythtriage/)
