@@ -11,7 +11,10 @@
 <style>
   * { box-sizing: border-box; }
   body {
-    margin: 0; background: #fdfcfa; color: #1f2328;
+    margin: 0; color: #1f2328;
+    background: #fdfcfa;
+    background-image: radial-gradient(#ddd8ce 1.1px, transparent 1.1px);
+    background-size: 22px 22px;
     font-family: Georgia, "Times New Roman", "Songti SC", serif;
     font-size: 19px; line-height: 1.65; font-weight: 400;
   }
@@ -22,20 +25,37 @@
   .nav a:hover { color: #555; }
   .nav a.here { color: #1f2328; }
   .rule { border: none; border-top: 1px solid #d8d5cf; margin: 22px 0 40px; }
-  h1 { font-size: 40px; font-weight: 700; margin: 0 0 10px; line-height: 1.2; }
-  h2 { font-size: 28px; font-weight: 700; margin: 52px 0 6px; }
+  h1 { font-size: 42px; font-weight: 700; margin: 0 0 10px; line-height: 1.2; }
+  h1 .marker { color: #8C1515; }
+  h2 { font-size: 29px; font-weight: 700; margin: 56px 0 6px; padding-bottom: 4px; border-bottom: 4px solid #ffe066; display: inline-block; }
   .zh { color: #555; }
   p { margin: 0 0 18px; }
   a { color: #7d7466; text-decoration: none; }
   a:hover { color: #555; text-decoration: underline; text-underline-offset: 3px; }
   .accent { color: #c4502b; }
-  .mapwrap { background: #fff; border: 1px solid #e3e0da; border-radius: 14px; padding: 18px 14px 8px; margin: 18px 0 20px; overflow-x: auto; }
+  .board { position: relative; background: #fff; border: 2px solid #1f2328; border-radius: 14px;
+           padding: 20px 14px 10px; margin: 22px 0 24px; overflow-x: auto;
+           box-shadow: 5px 6px 0 rgba(31,35,40,.10); }
+  .board::before { content: ""; position: absolute; top: -2px; left: 50%; transform: translateX(-50%) rotate(-1.2deg);
+           width: 132px; height: 24px; background: rgba(255,224,102,.75); border-left: 1px dashed rgba(0,0,0,.12); border-right: 1px dashed rgba(0,0,0,.12); }
+  .board svg { display: block; min-width: 720px; width: 100%; height: auto; }
+  .mapwrap { position: relative; background: #fff; border: 2px solid #1f2328; border-radius: 14px; padding: 18px 14px 8px; margin: 18px 0 20px; overflow-x: auto; box-shadow: 5px 6px 0 rgba(31,35,40,.10); }
   .mapwrap svg { display: block; min-width: 720px; width: 100%; height: auto; }
+  .stickies { display: flex; flex-wrap: wrap; gap: 12px; margin: 6px 0 8px; }
+  .sticky { flex: 1 1 150px; padding: 12px 14px 10px; border-radius: 4px; font-size: 16.5px; line-height: 1.45;
+            box-shadow: 3px 4px 0 rgba(31,35,40,.10); }
+  .sticky b { display: block; font-size: 17.5px; margin-bottom: 3px; }
+  .sticky small { color: #444; }
+  .s1 { background: #ffe066; transform: rotate(-1deg); }
+  .s2 { background: #ffc2d4; transform: rotate(.8deg); }
+  .s3 { background: #b2f2bb; transform: rotate(-.6deg); }
+  .s4 { background: #a5d8ff; transform: rotate(1deg); }
+  .s5 { background: #ffd8a8; transform: rotate(-.8deg); }
   .links { font-size: 17.5px; }
   .links a { margin-right: 6px; }
   .footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #e3e0da; margin-top: 56px; padding: 20px 0 28px; color: #1f2328; font-size: 18px; }
   @media (max-width: 640px) {
-    h1 { font-size: 31px; }
+    h1 { font-size: 32px; }
     h2 { font-size: 24px; }
     .nav a { margin-left: 14px; font-size: 16px; }
   }
@@ -56,23 +76,72 @@
   </div>
   <hr class="rule">
 
-  <h1>The Stanford courses I recommend most</h1>
+  <h1>The Stanford courses I <span class="marker">recommend</span> most</h1>
   <p class="zh">我在 Stanford 最推荐的两门课</p>
 
   <p>Two courses shaped how I work more than any others. <b>CS197</b> taught me how to <i>do</i> research — how to ask a question, run a fair test, and write up what actually happened. <b>CS329Z</b> taught me how to <i>build</i> — how to engineer an AI agent, and how to tell whether it deserves to be trusted. Each course, in one mind map:</p>
   <p class="zh">这两门课对我影响最大：CS197 教我怎么做研究——怎么提问题、怎么做公平的实验、怎么诚实地写下结果；CS329Z 教我怎么做东西——怎么构建 AI 智能体，又怎么判断它到底值不值得信任。下面每门课一张思维导图。</p>
+
+  
+  <div class="board">
+  <svg viewBox="0 0 960 380" role="img" aria-label="Overview mind map: the two recommended courses on one map">
+    <path d="M480 190 C420 120,370 84,306 62" stroke="#8C1515" stroke-width="3" fill="none"/>
+    <path d="M356 190 C340 190,322 190,306 190" stroke="#2563eb" stroke-width="3" fill="none"/>
+    <path d="M480 190 C420 260,370 296,306 318" stroke="#059669" stroke-width="3" fill="none"/>
+    <path d="M480 190 C540 120,590 84,654 62" stroke="#d97706" stroke-width="3" fill="none"/>
+    <path d="M604 190 C620 190,638 190,654 190" stroke="#7c3aed" stroke-width="3" fill="none"/>
+    <path d="M480 190 C540 260,590 296,654 318" stroke="#db2777" stroke-width="3" fill="none"/>
+    <rect x="356" y="144" rx="22" width="248" height="92" fill="#1f2328"/>
+    <text x="480" y="178" text-anchor="middle" fill="#fff" font-size="20" font-weight="700" font-family="Georgia, serif">START HERE · \u5148\u770b\u8fd9\u5f20\u56fe</text>
+    <text x="480" y="204" text-anchor="middle" fill="#f3d9a4" font-size="14.5" font-family="Georgia, serif">Two courses, one map</text>
+    <g font-family="Georgia, serif">
+      <rect x="10" y="12" width="296" height="100" rx="12" fill="#fdf3f3" stroke="#8C1515" stroke-width="2"/>
+      <text x="28" y="50" font-size="16.5" font-weight="700" fill="#8C1515">CS197 · DO RESEARCH</text>
+      <text x="28" y="74" font-size="13.5" fill="#444">Ask a question, run a fair test,</text>
+      <text x="28" y="94" font-size="13.5" fill="#444">report what actually happened</text>
+      <rect x="10" y="140" width="296" height="100" rx="12" fill="#eff4fe" stroke="#2563eb" stroke-width="2"/>
+      <text x="28" y="178" font-size="16.5" font-weight="700" fill="#2563eb">CS197 · THE FINDING</text>
+      <text x="28" y="202" font-size="13.5" fill="#444">The simple recipe wins overall;</text>
+      <text x="28" y="222" font-size="13.5" fill="#444">a popular trick fails completely</text>
+      <rect x="10" y="268" width="296" height="100" rx="12" fill="#ecf9f1" stroke="#059669" stroke-width="2"/>
+      <text x="28" y="306" font-size="16.5" font-weight="700" fill="#059669">FOR RESEARCHERS</text>
+      <text x="28" y="330" font-size="13.5" fill="#444">Leave with a real result</text>
+      <text x="28" y="350" font-size="13.5" fill="#444">with your name on it</text>
+      <rect x="654" y="12" width="296" height="100" rx="12" fill="#fdf6ec" stroke="#d97706" stroke-width="2"/>
+      <text x="672" y="50" font-size="16.5" font-weight="700" fill="#d97706">CS329Z · BUILD AGENTS</text>
+      <text x="672" y="74" font-size="13.5" fill="#444">Retrieval, tool calls, agent loop \u2014</text>
+      <text x="672" y="94" font-size="13.5" fill="#444">by hand first, frameworks after</text>
+      <rect x="654" y="140" width="296" height="100" rx="12" fill="#f4effd" stroke="#7c3aed" stroke-width="2"/>
+      <text x="672" y="178" font-size="16.5" font-weight="700" fill="#7c3aed">CS329Z · EVALS ARE THE CORE</text>
+      <text x="672" y="202" font-size="13.5" fill="#444">How do you know it works?</text>
+      <text x="672" y="222" font-size="13.5" fill="#444">Confidence tracks fluency, not truth</text>
+      <rect x="654" y="268" width="296" height="100" rx="12" fill="#fdeef5" stroke="#db2777" stroke-width="2"/>
+      <text x="672" y="306" font-size="16.5" font-weight="700" fill="#db2777">FOR BUILDERS</text>
+      <text x="672" y="330" font-size="13.5" fill="#444">Agents you can trust \u2014</text>
+      <text x="672" y="350" font-size="13.5" fill="#444">not demos that merely run</text>
+    </g>
+  </svg>
+  </div>
+
+  <div class="stickies" aria-label="How the two courses map to design thinking">
+    <div class="sticky s1"><b>Empathize · 共情</b><small>Start from a real problem — a grandmother's remedies, a hospital table.</small></div>
+    <div class="sticky s2"><b>Define · 定义</b><small>CS197: turn curiosity into one testable question.</small></div>
+    <div class="sticky s3"><b>Ideate · 构思</b><small>Bit flips &amp; vectoring: small change, clear direction.</small></div>
+    <div class="sticky s4"><b>Prototype · 原型</b><small>CS329Z: build the agent loop by hand, then ship it.</small></div>
+    <div class="sticky s5"><b>Test · 测试</b><small>Evals decide: does it deserve to be trusted?</small></div>
+  </div>
 
   <h2>CS197 · Computer Science Research</h2>
   <p class="zh">CS197 · 计算机科学研究入门</p>
 
   <div class="mapwrap">
   <svg viewBox="0 0 960 430" role="img" aria-label="Mind map of CS197 Computer Science Research">
-    <path d="M480 215 C400 110,300 78,178 84" stroke="#8C1515" stroke-width="2.5" fill="none"/>
-    <path d="M480 215 C400 215,300 212,168 215" stroke="#2563eb" stroke-width="2.5" fill="none"/>
-    <path d="M480 215 C400 320,300 352,178 346" stroke="#059669" stroke-width="2.5" fill="none"/>
-    <path d="M480 215 C560 110,660 78,782 84" stroke="#d97706" stroke-width="2.5" fill="none"/>
-    <path d="M480 215 C560 215,660 212,792 215" stroke="#7c3aed" stroke-width="2.5" fill="none"/>
-    <path d="M480 215 C560 320,660 352,782 346" stroke="#db2777" stroke-width="2.5" fill="none"/>
+    <path d="M480 215 C430 120,390 84,340 72" stroke="#8C1515" stroke-width="2.5" fill="none"/>
+    <path d="M480 215 C430 215,390 214,340 207" stroke="#2563eb" stroke-width="2.5" fill="none"/>
+    <path d="M480 215 C430 310,390 338,340 338" stroke="#059669" stroke-width="2.5" fill="none"/>
+    <path d="M480 215 C530 120,570 84,620 72" stroke="#d97706" stroke-width="2.5" fill="none"/>
+    <path d="M480 215 C530 215,570 214,620 207" stroke="#7c3aed" stroke-width="2.5" fill="none"/>
+    <path d="M480 215 C530 310,570 338,620 338" stroke="#db2777" stroke-width="2.5" fill="none"/>
     <rect x="372" y="172" rx="20" width="216" height="86" fill="#1f2328"/>
     <text x="480" y="205" text-anchor="middle" fill="#fff" font-size="21" font-weight="700" font-family="Georgia, serif">CS197</text>
     <text x="480" y="230" text-anchor="middle" fill="#f3d9a4" font-size="13.5" font-family="Georgia, serif">Computer Science Research</text>
@@ -119,19 +188,19 @@
 
   <p>In CS197 you do not study research from the outside — you run one. Our team asked whether the way you prepare numbers before feeding them to a model changes what the model learns, and the honest answer surprised us: the plainest preparation was the best overall, one fancy method was best at exactly one thing and worst at everything else, and a popular trick failed completely. Learning to report <i>that</i> — surprises included — is the real curriculum.</p>
   <p class="zh">在 CS197，你不是在课外看别人做研究，而是自己真正跑一个项目。我们组的问题是：把数字喂给模型之前先怎么处理，会不会改变模型学到的东西？诚实的答案出乎意料：最朴素的处理整体最好；一个花哨的方法只赢了一项、其他全输；一个流行技巧则彻底失败。学会把这样的结果——包括意外——如实写出来，才是这门课真正的教学内容。</p>
-  <p class="links">Go deeper: <a href="../readings/cs197-findings/">findings note</a> · <a href="../readings/cs197-findings/mindmap.html">detailed mind map (English / 中文)</a> · <a href="../readings/cs197-findings/video.mp4">video</a> · <a href="https://web.stanford.edu/class/cs197/">course site</a></p>
+  <p class="links">Go deeper: <a href="../readings/cs197-findings/">findings note</a> · <a href="../readings/cs197-findings/mindmap.html">detailed mind map (English / 中文)</a> · <a href="../readings/cs197-findings/video.mp4">video</a> · <a href="https://web.stanford.edu/class/cs197/">course site</a> · <a href="https://github.com/owenl/Stanford_cs197">GitHub repo</a></p>
 
   <h2>CS329Z · Engineering AI Agents</h2>
   <p class="zh">CS329Z · AI 智能体工程</p>
 
   <div class="mapwrap">
   <svg viewBox="0 0 960 430" role="img" aria-label="Mind map of CS329Z Engineering AI Agents">
-    <path d="M480 215 C400 110,300 78,178 84" stroke="#8C1515" stroke-width="2.5" fill="none"/>
-    <path d="M480 215 C400 215,300 212,168 215" stroke="#2563eb" stroke-width="2.5" fill="none"/>
-    <path d="M480 215 C400 320,300 352,178 346" stroke="#059669" stroke-width="2.5" fill="none"/>
-    <path d="M480 215 C560 110,660 78,782 84" stroke="#d97706" stroke-width="2.5" fill="none"/>
-    <path d="M480 215 C560 215,660 212,792 215" stroke="#7c3aed" stroke-width="2.5" fill="none"/>
-    <path d="M480 215 C560 320,660 352,782 346" stroke="#db2777" stroke-width="2.5" fill="none"/>
+    <path d="M480 215 C430 120,390 84,340 72" stroke="#8C1515" stroke-width="2.5" fill="none"/>
+    <path d="M480 215 C430 215,390 214,340 207" stroke="#2563eb" stroke-width="2.5" fill="none"/>
+    <path d="M480 215 C430 310,390 338,340 338" stroke="#059669" stroke-width="2.5" fill="none"/>
+    <path d="M480 215 C530 120,570 84,620 72" stroke="#d97706" stroke-width="2.5" fill="none"/>
+    <path d="M480 215 C530 215,570 214,620 207" stroke="#7c3aed" stroke-width="2.5" fill="none"/>
+    <path d="M480 215 C530 310,570 338,620 338" stroke="#db2777" stroke-width="2.5" fill="none"/>
     <rect x="372" y="172" rx="20" width="216" height="86" fill="#1f2328"/>
     <text x="480" y="205" text-anchor="middle" fill="#fff" font-size="21" font-weight="700" font-family="Georgia, serif">CS329Z</text>
     <text x="480" y="230" text-anchor="middle" fill="#f3d9a4" font-size="13.5" font-family="Georgia, serif">Engineering AI Agents</text>
@@ -177,7 +246,7 @@
 
   <p>CS329Z is not a course about prompting. You write the retrieval, the tool calls, and the agent loop yourself before any framework is allowed, and then you spend the second half of the course on the harder question: how do you <i>know</i> it works? My final project, Medical MythTriage, came straight out of that question — and its main finding is the course in one line: a fast model&rsquo;s confidence tracks how fluent a claim sounds, not whether it is true.</p>
   <p class="zh">CS329Z 不是一门讲提示词的课。框架不许先用——检索、工具调用、智能体循环都要先自己写出来；然后用后半学期回答更难的问题：你怎么知道它真的管用？我的期末项目 Medical MythTriage 正是从这个问题里长出来的，它的核心结论就是这门课的一句话版本：快速模型的自信，跟着一句话听起来有多顺走，而不是跟着它是不是真的走。</p>
-  <p class="links">Go deeper: <a href="../mythtriage/">Medical MythTriage</a> · <a href="../readings/mythtriage/">midway report note</a> · <a href="../readings/calibration-benchmark/">calibration benchmark notes</a> · <a href="https://web.stanford.edu/class/cs329z/">course site</a></p>
+  <p class="links">Go deeper: <a href="../mythtriage/">Medical MythTriage</a> · <a href="../readings/mythtriage/">midway report note</a> · <a href="../readings/calibration-benchmark/">calibration benchmark notes</a> · <a href="https://web.stanford.edu/class/cs329z/">course site</a> · <a href="https://github.com/owenyliu/medical-mythtriage">GitHub repo</a></p>
 
   <p style="margin-top:44px">If you are a student choosing courses at Stanford and you can only take two of mine, take these — one for the research, one for the building. <span class="zh">如果你在 Stanford 选课，只能选两门我上过的，就选这两门——一门为了研究，一门为了动手做东西。</span></p>
 
